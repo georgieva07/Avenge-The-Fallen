@@ -8,3 +8,13 @@ D:\FINKI\4. Fourth semester\VP\Project\AvengersTheFallen\AvengersTheFallen\obj\D
 D:\FINKI\4. Fourth semester\VP\Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.csproj.CoreCompileInputs.cache
 D:\FINKI\4. Fourth semester\VP\Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.exe
 D:\FINKI\4. Fourth semester\VP\Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.pdb
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\bin\Debug\AvengersTheFallen.exe.config
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\bin\Debug\AvengersTheFallen.exe
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\bin\Debug\AvengersTheFallen.pdb
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.csprojAssemblyReference.cache
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.Form1.resources
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.Properties.Resources.resources
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.csproj.GenerateResource.cache
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.csproj.CoreCompileInputs.cache
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.exe
+D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.pdb

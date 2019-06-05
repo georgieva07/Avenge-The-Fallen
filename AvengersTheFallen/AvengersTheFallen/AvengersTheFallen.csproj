@@ -83,34 +83,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\drstrange.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hulk.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ironman.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\scarletwitch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\thor.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\captainamerica.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\car.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\drstrange.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hulk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\iman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ironman.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mjolnir.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\scarletwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\strange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -43,13 +43,13 @@ namespace AvengersTheFallen
 			{
 				Character = Resources.drstrange;
             }
-            Character = new Bitmap(Character, new Size(40, 90 ));
+            Character = new Bitmap(Character, new Size(40, 90));
         }
 
 		public void Resize(int width, int height)
 		{
-            //this.width = width;
-            //this.height = height;
+            this.width = width;
+            this.height = height;
 		}
 		public void Draw(Graphics g)
 		{
@@ -57,7 +57,7 @@ namespace AvengersTheFallen
             g.DrawRectangle(new Pen(Color.Red), Position.X, Position.Y, Character.Width, Character.Height);
 		}
 
-		public void Move(int width, int height, string direction)
+		public void Move(string direction)
 		{
 			if (direction == "Left")
 			{

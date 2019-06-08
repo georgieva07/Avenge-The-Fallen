@@ -28,35 +28,39 @@ namespace AvengersTheFallen
             this.Width = 1000;
             t = false;
             avenger = new Avenger("Thor", new Point(this.Width / 2, this.Height - 130));
+            avenger.Resize(1000, 500);
             map = new Map(this.Height, this.Width, avenger.Name);
         }
 
 		private void Form1_Resize(object sender, EventArgs e)
 		{
-            if(avenger != null)
-			    avenger.Resize(this.Width, this.Height);
+            this.Width = this.Height * 2;
 			Invalidate(true);
 		}
 
 		private void Form1_Paint(object sender, PaintEventArgs e)
 		{
-            if(!t)
+            if (!t)
 			    e.Graphics.Clear(Color.White);
             else
                 e.Graphics.Clear(Color.Green);
+            Pen pen = new Pen(Color.White);
+            e.Graphics.DrawRectangle(pen, 0, 0, 1, 1);
+            e.Graphics.ScaleTransform(((float)(this.Height * 2) / 1000.0F), ((float)(this.Height) / 500.0F));
             avenger.Draw(e.Graphics);
             map.Draw(e.Graphics);
-		}
+            pen.Dispose();
+        }
 
 		private void Form1_KeyDown(object sender, KeyEventArgs e)
 		{
 			if(e.KeyData == Keys.A)
 			{
-				avenger.Move(this.Width, this.Height, "Left");
+				avenger.Move("Left");
 			}
-			if (e.KeyData == Keys.D)
+			if (e.KeyData == Keys.D) 
 			{
-				avenger.Move(this.Width, this.Height, "Right");
+				avenger.Move("Right");
 			}
 
 			Invalidate(true);

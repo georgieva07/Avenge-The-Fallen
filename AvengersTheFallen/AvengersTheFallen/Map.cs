@@ -39,7 +39,7 @@ namespace AvengersTheFallen
         {
             //gi pomestuva site prepreki nadolu
             int i = 0;
-            for(i = 0; i < obstacles.Count; i++)
+            for (i = 0; i < obstacles.Count; i++)
             {
                 Point k = obstacles[i];
                 k.Y = k.Y + 4;
@@ -84,9 +84,9 @@ namespace AvengersTheFallen
             for (i = 0; i < obstacles.Count; i++)
             {
                 Point p = obstacles[i];
-                if(a.X > p.X && a.X < p.X + 50)
+                if (a.X > p.X && a.X < p.X + 50)
                 {
-                    if(a.Y > p.Y && a.Y < p.Y + 100)
+                    if (a.Y > p.Y && a.Y < p.Y + 100)
                     {
                         t = true;
                         break;

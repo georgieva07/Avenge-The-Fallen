@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvengersTheFallen.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,30 +15,36 @@ namespace AvengersTheFallen
 	{
 		private Avenger avenger;
         Map map;
+        Boolean t;
 
 		public Form1()
 		{
-			InitializeComponent();
-			this.DoubleBuffered = true;
-            this.Height = 500;
-            this.Width = 1000;
-			avenger = new Avenger("Thor", new Point(this.Width/2, (int)this.Height * 70 / 100));
+            InitializeComponent();
+            this.DoubleBuffered = true;
             timerGenerateObstacles.Interval = timerMapMove.Interval * 54;
             timerMapMove.Enabled = true;
             timerGenerateObstacles.Enabled = true;
+            this.Height = 500;
+            this.Width = 1000;
+            t = false;
+            avenger = new Avenger("Thor", new Point(this.Width / 2, this.Height - 130));
             map = new Map(this.Height, this.Width, avenger.Name);
-		}
+        }
 
 		private void Form1_Resize(object sender, EventArgs e)
 		{
-			//avenger.Resize(this.Width, this.Height);
+            if(avenger != null)
+			    avenger.Resize(this.Width, this.Height);
 			Invalidate(true);
 		}
 
 		private void Form1_Paint(object sender, PaintEventArgs e)
 		{
-			e.Graphics.Clear(Color.White);
-			avenger.Draw(e.Graphics);
+            if(!t)
+			    e.Graphics.Clear(Color.White);
+            else
+                e.Graphics.Clear(Color.Green);
+            avenger.Draw(e.Graphics);
             map.Draw(e.Graphics);
 		}
 
@@ -64,6 +71,7 @@ namespace AvengersTheFallen
         private void TimerMapMove_Tick(object sender, EventArgs e)
         {
             map.moveObstacles();
+            t = map.checkCollisionObstacle(avenger);
             Invalidate();
         }
 

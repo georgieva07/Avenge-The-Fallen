@@ -13,6 +13,7 @@ namespace AvengersTheFallen
 		public Point Position { get; set; }
 		public string Name { get; set; }
 		public Image Character { get; set; }
+        public int width, height;
 
 		public Avenger(string name, Point position)
 		{
@@ -41,16 +42,19 @@ namespace AvengersTheFallen
 			else if (Name == "DrStrange")
 			{
 				Character = Resources.drstrange;
-			}
-		}
+            }
+            Character = new Bitmap(Character, new Size(40, 90 ));
+        }
 
 		public void Resize(int width, int height)
 		{
-			Position = new Point(width / 2, (int)height-Character.Height);
+            //this.width = width;
+            //this.height = height;
 		}
 		public void Draw(Graphics g)
 		{
-			g.DrawImage(Character, new Point(Position.X - Character.Width/2, Position.Y - Character.Height/2));
+			g.DrawImage(Character, new Point(Position.X, Position.Y));
+            g.DrawRectangle(new Pen(Color.Red), Position.X, Position.Y, Character.Width, Character.Height);
 		}
 
 		public void Move(int width, int height, string direction)
@@ -65,7 +69,7 @@ namespace AvengersTheFallen
 			}
 			if (direction == "Right")
 			{
-				if (Position.X + 4 <= width)
+				if (Position.X + 4 <= width - Character.Width)
 				{
 					Position = new Point(Position.X + 4, Position.Y);
 				}

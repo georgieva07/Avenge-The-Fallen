@@ -57,17 +57,17 @@ namespace AvengersTheFallen
 		{
 			if (direction == "Left")
 			{
-				if (Position.X - 10 >= 0)
+				if (Position.X - 4 >= 0)
 				{
-					Position = new Point(Position.X - 10, Position.Y);
+					Position = new Point(Position.X - 4, Position.Y);
 				}
 				
 			}
 			if (direction == "Right")
 			{
-				if (Position.X + 10 <= width)
+				if (Position.X + 4 <= width)
 				{
-					Position = new Point(Position.X + 10, Position.Y);
+					Position = new Point(Position.X + 4, Position.Y);
 				}
 			}
 		}

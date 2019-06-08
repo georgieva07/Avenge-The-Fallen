@@ -18,3 +18,13 @@ D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheF
 D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.csproj.CoreCompileInputs.cache
 D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.exe
 D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.pdb
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\bin\Debug\AvengersTheFallen.exe.config
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\bin\Debug\AvengersTheFallen.exe
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\bin\Debug\AvengersTheFallen.pdb
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.csprojAssemblyReference.cache
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.Form1.resources
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.Properties.Resources.resources
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.csproj.GenerateResource.cache
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.csproj.CoreCompileInputs.cache
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.exe
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.pdb

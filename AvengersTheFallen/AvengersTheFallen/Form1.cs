@@ -69,9 +69,9 @@ namespace AvengersTheFallen
         private void TimerMapMove_Tick(object sender, EventArgs e)
         {
             map.moveObstacles();
-            t = map.checkCollisionObstacle(avenger);
-            if(t)
-
+            Boolean t = map.checkCollisionObstacle(avenger);
+            if (t) { }
+                //avenger takes damage
             Invalidate();
         }
 

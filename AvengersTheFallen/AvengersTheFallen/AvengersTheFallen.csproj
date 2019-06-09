@@ -88,9 +88,6 @@
     <None Include="Resources\captainamerica.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\car.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\drstrange.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +113,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motorcycle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

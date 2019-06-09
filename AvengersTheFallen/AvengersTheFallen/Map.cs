@@ -12,7 +12,7 @@ namespace AvengersTheFallen
         int height;//visina na prozorecot
         int width;//sirina na prozorecot
         Image backgroundImage;//slika za pozadina
-        String level;//nivo
+        string level;//nivo
         List<Obstacle> obstacles;//lista koordinati na site prepreki
         public Map(int h, int w, String l)
         {
@@ -25,14 +25,11 @@ namespace AvengersTheFallen
         public void Draw(Graphics g)
         {
             //ja iscrtuva mapata i preprekite na nea
-            Point p = new Point(0, 0);
             //g.DrawImage(backgroundImage, p);
-            Brush h = new SolidBrush(Color.Red);
             for (int i = 0; i < obstacles.Count; i++)
             {
-                g.FillRectangle(h, obstacles[i].position.X, obstacles[i].position.Y, 50, 100);
+                obstacles[i].Draw(g);
             }
-            h.Dispose();
         }
 
         public void moveObstacles()
@@ -59,19 +56,19 @@ namespace AvengersTheFallen
             Random r = new Random();
             int a = -1, b = -1, c = -1;
             a = r.Next(0, width - 10);
-            obstacles.Add(new Obstacle(new Point(a, -100)));
+            obstacles.Add(new Obstacle(new Point(a, -100), level));
             b = r.Next(0, width - 10);
             while (b >= a - 100 && b <= a + 100)
             {
                 b = r.Next(0, width - 10);
             }
-            obstacles.Add(new Obstacle(new Point(b, -100)));
+            obstacles.Add(new Obstacle(new Point(b, -100), level));
             c = r.Next(0, width - 10);
             while ((c >= a - 100 && c <= a + 100) || (c >= b - 100 && c <= b + 100))
             {
                 c = r.Next(0, width - 10);
             }
-            obstacles.Add(new Obstacle(new Point(c, -100)));
+            obstacles.Add(new Obstacle(new Point(c, -100), level));
         }
 
         public Boolean checkCollisionObstacle(Avenger avenger)
@@ -84,27 +81,55 @@ namespace AvengersTheFallen
             for (i = 0; i < obstacles.Count; i++)
             {
                 Point p = obstacles[i].position;
-                if (a.X > p.X && a.X < p.X + 50)
+                if (a.X > p.X && a.X < p.X + obstacles[i].image.Width)
                 {
-                    if (a.Y > p.Y && a.Y < p.Y + 100)
+                    if (a.Y > p.Y && a.Y < p.Y + obstacles[i].image.Height)
                     {
                         t = true;
                         break;
                     }
-                    if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + 100)
+                    if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + obstacles[i].image.Height)
                     {
                         t = true;
                         break;
                     }
                 }
-                if (a.X + avenger.Character.Width > p.X && a.X + avenger.Character.Width < p.X + 50)
+                if (a.X + avenger.Character.Width > p.X && a.X + avenger.Character.Width < p.X + obstacles[i].image.Width)
                 {
-                    if (a.Y > p.Y && a.Y < p.Y + 100)
+                    if (a.Y > p.Y && a.Y < p.Y + obstacles[i].image.Height)
                     {
                         t = true;
                         break;
                     }
-                    if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + 100)
+                    if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + obstacles[i].image.Height)
+                    {
+                        t = true;
+                        break;
+                    }
+                }
+
+
+                if (p.X > a.X && p.X < a.X + avenger.Character.Width)
+                {
+                    if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height)
+                    {
+                        t = true;
+                        break;
+                    }
+                    if (p.Y + obstacles[i].image.Height > a.Y && p.Y + obstacles[i].image.Height < a.Y + avenger.Character.Height)
+                    {
+                        t = true;
+                        break;
+                    }
+                }
+                if (p.X + obstacles[i].image.Width > a.X && p.X + obstacles[i].image.Width < a.X + avenger.Character.Width)
+                {
+                    if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height)
+                    {
+                        t = true;
+                        break;
+                    }
+                    if (p.Y + obstacles[i].image.Height > a.Y && p.Y + obstacles[i].image.Height < a.Y + avenger.Character.Height)
                     {
                         t = true;
                         break;

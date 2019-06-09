@@ -57,13 +57,17 @@ namespace AvengersTheFallen
 
 		private void Form1_KeyDown(object sender, KeyEventArgs e)
 		{
-			if(e.KeyData == Keys.A)
+			if(e.KeyData == Keys.Left)
 			{
 				avenger.Move("Left");
 			}
-			if (e.KeyData == Keys.D) 
+			if (e.KeyData == Keys.Right) 
 			{
 				avenger.Move("Right");
+			}
+			if(e.KeyData == Keys.Space)
+			{
+				avenger.AddShot();
 			}
             panel1.Invalidate(true);
         }
@@ -93,13 +97,6 @@ namespace AvengersTheFallen
             map.Draw(e.Graphics);
         }
 
-
-		private void panel1_MouseClick(object sender, MouseEventArgs e)
-		{
-			//MessageBox.Show("Mouse clicked");
-			avenger.AddShot();
-			Invalidate(true);
-		}
 
 		private void Form1_Paint(object sender, PaintEventArgs e)
 		{

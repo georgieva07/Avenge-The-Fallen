@@ -155,11 +155,13 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							break;
 						}
 						else if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + obstacles[i].image.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							break;
 						}
 					}
 					else if (avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width > p.X && avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width < p.X + obstacles[i].image.Width)
@@ -168,11 +170,13 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							break;
 						}
 						else if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + obstacles[i].image.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							break;
 						}
 					}
 
@@ -183,11 +187,13 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							break;
 						}
 						else if (p.Y + obstacles[i].image.Height > avenger.shots[j].Location.Y && p.Y + obstacles[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							break;
 						}
 					}
 					else if (p.X + obstacles[i].image.Width > avenger.shots[j].Location.X && p.X + obstacles[i].image.Width < avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width)
@@ -196,11 +202,13 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							break;
 						}
 						else if (p.Y + obstacles[i].image.Height > avenger.shots[j].Location.Y && p.Y + obstacles[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							break;
 						}
 					}
 				}

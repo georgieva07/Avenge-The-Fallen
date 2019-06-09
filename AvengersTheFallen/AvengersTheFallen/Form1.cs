@@ -57,7 +57,7 @@ namespace AvengersTheFallen
 
 		private void Form1_Paint(object sender, PaintEventArgs e)
         {
-
+			e.Graphics.Clear(Color.White);
         }
 
 		private void Form1_KeyDown(object sender, KeyEventArgs e)

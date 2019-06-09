@@ -15,14 +15,16 @@ namespace AvengersTheFallen
     public partial class Form1 : Form
 	{
 		private Avenger avenger;
-        Map map;
+        private Map map;
         public static Random r;
+		private int tickCount;
 
 		public Form1()
 		{
             InitializeComponent();
             this.DoubleBuffered = true;
             r = new Random();
+			tickCount = 0;
             timerGenerateObstacles.Interval = timerMapMove.Interval * 54;
             timerMapMove.Enabled = true;
             timerGenerateObstacles.Enabled = true;
@@ -67,7 +69,11 @@ namespace AvengersTheFallen
 			}
 			if(e.KeyData == Keys.Space)
 			{
-				avenger.AddShot();
+				if (tickCount % 5 == 0)
+				{
+					avenger.AddShot();
+				}
+				
 			}
             panel1.Invalidate(true);
         }
@@ -101,6 +107,11 @@ namespace AvengersTheFallen
 		private void Form1_Paint(object sender, PaintEventArgs e)
 		{
 			e.Graphics.Clear(Color.White);
+		}
+
+		private void timerShooting_Tick(object sender, EventArgs e)
+		{
+			tickCount++;
 		}
 	}
 }

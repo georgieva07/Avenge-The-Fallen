@@ -26,11 +26,9 @@ namespace AvengersTheFallen
             timerGenerateObstacles.Interval = timerMapMove.Interval * 54;
             timerMapMove.Enabled = true;
             timerGenerateObstacles.Enabled = true;
-            this.Height = 750;
-            this.Width = 1500;
-            panel1.Location = new Point(0, 0);
-            panel1.Height = 500;
-            panel1.Width = 1000;
+            this.Height = 500;
+            this.Width = 1000;
+            Form1_Resize(null, null);
             avenger = new Avenger("Thor", new Point(1000 / 2, 500 - 90));
             map = new Map(500, 1000, avenger.Name);
             TimerGenerateObstacles_Tick(null, null);
@@ -38,7 +36,22 @@ namespace AvengersTheFallen
 
 		private void Form1_Resize(object sender, EventArgs e)
 		{
-            this.Width = this.Height * 2;
+            int x = 0, y = 0;
+            if(this.Width> (this.Height-40) * 2)
+            {
+                panel1.Height = this.Height - 40 ;
+                panel1.Width = panel1.Height * 2;
+                y = 0;
+                x = (this.Width - panel1.Width) / 2;
+            }
+            else
+            {
+                panel1.Width = this.Width;
+                panel1.Height = this.Width / 2 - 20;
+                x = 0;
+                y = (this.Height - 40 - panel1.Height) / 2;
+            }
+            panel1.Location = new Point(x, y);
 			panel1.Invalidate(true);
 		}
 
@@ -78,7 +91,7 @@ namespace AvengersTheFallen
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.Clear(Color.White);
-            e.Graphics.ScaleTransform((float)(panel1.Width / 1000), ((float)(panel1.Height) / 500));
+            e.Graphics.ScaleTransform((float)(panel1.Width / 1000.0F), ((float)(panel1.Height) / 500.0F));
             avenger.Draw(e.Graphics);
             map.Draw(e.Graphics);
         }

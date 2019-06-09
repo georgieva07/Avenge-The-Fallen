@@ -43,10 +43,21 @@ namespace AvengersTheFallen
 			{
 				WeaponImage = Resources.strange;
 			}
+			WeaponImage = new Bitmap(WeaponImage, new Size(30, 40));
 		}
 
-
+		public void Draw(Graphics g)
+		{
+			g.DrawImage(WeaponImage, Location);
+		}
 		
+		public void Move()
+		{
+			if(Location.Y - 10 >= 0)
+			{
+				Location = new Point(Location.X, Location.Y - 10);
+			}
+		}
 	}
 
 }

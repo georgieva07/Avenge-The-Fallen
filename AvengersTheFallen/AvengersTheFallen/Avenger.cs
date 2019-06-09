@@ -14,6 +14,7 @@ namespace AvengersTheFallen
 		public string Name { get; set; }
 		public Image Character { get; set; }
         public int width, height;
+		public List<Weapon> shots { get; set; }
 
 		public Avenger(string name, Point position)
 		{
@@ -21,6 +22,7 @@ namespace AvengersTheFallen
 			Position = position;
             width = 1000;
             height = 500;
+			shots = new List<Weapon>();
 			if (Name == "IronMan")
 			{
 				Character = Resources.ironman;
@@ -44,7 +46,7 @@ namespace AvengersTheFallen
 			else if (Name == "DrStrange")
 			{
 				Character = Resources.drstrange;
-            }
+			}
             Character = new Bitmap(Character, new Size(40, 90));
         }
 
@@ -52,6 +54,11 @@ namespace AvengersTheFallen
 		{
 			g.DrawImage(Character, new Point(Position.X, Position.Y));
             g.DrawRectangle(new Pen(Color.Red), Position.X, Position.Y, Character.Width, Character.Height);
+
+			foreach (Weapon w in shots)
+			{
+				w.Draw(g);
+			}
 		}
 
 		public void Move(string direction)
@@ -71,6 +78,19 @@ namespace AvengersTheFallen
 					Position = new Point(Position.X + 4, Position.Y);
 				}
 			}
+		}
+
+		public void MoveShots()
+		{
+			foreach (Weapon w in shots)
+			{
+				w.Move();
+			}
+		}
+
+		public void AddShot()
+		{
+			shots.Add(new Weapon(Name, new Point(Position.X, Position.Y - 20)));
 		}
 
 	}

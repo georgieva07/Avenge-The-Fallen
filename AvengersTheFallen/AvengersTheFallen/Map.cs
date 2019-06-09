@@ -14,6 +14,7 @@ namespace AvengersTheFallen
         Image backgroundImage;//slika za pozadina
         string level;//nivo
         List<Obstacle> obstacles;//lista koordinati na site prepreki
+
         public Map(int h, int w, String l)
         {
             height = h;
@@ -50,6 +51,7 @@ namespace AvengersTheFallen
             }
         }
 
+		
         public void AddObstacles()
         {
             //dodava tri random prepreki na mapata

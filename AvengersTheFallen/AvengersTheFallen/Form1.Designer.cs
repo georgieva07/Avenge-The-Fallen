@@ -51,6 +51,7 @@
 			this.panel1.Size = new System.Drawing.Size(150, 81);
 			this.panel1.TabIndex = 0;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+			this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
 			// 
 			// Form1
 			// 
@@ -62,7 +63,6 @@
 			this.Name = "Form1";
 			this.Text = "Avengers: The Fallen";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-			this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
 			this.Resize += new System.EventHandler(this.Form1_Resize);
 			this.ResumeLayout(false);
 

@@ -65,9 +65,9 @@ namespace AvengersTheFallen
 		{
 			if (direction == "Left")
 			{
-				if (Position.X - 4 >= 0)
+				if (Position.X - 10 >= 0)
 				{
-					Position = new Point(Position.X - 4, Position.Y);
+					Position = new Point(Position.X - 10, Position.Y);
 				}
 				
 			}
@@ -75,7 +75,7 @@ namespace AvengersTheFallen
 			{
 				if (Position.X + 4 <= width - Character.Width)
 				{
-					Position = new Point(Position.X + 4, Position.Y);
+					Position = new Point(Position.X + 10, Position.Y);
 				}
 			}
 		}
@@ -85,6 +85,13 @@ namespace AvengersTheFallen
 			foreach (Weapon w in shots)
 			{
 				w.Move();
+			}
+			for(int i = 0; i<shots.Count; i++)
+			{
+				if(shots[i].Location.Y == 0)
+				{
+					shots.RemoveAt(i);
+				}
 			}
 		}
 

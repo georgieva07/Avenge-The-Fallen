@@ -97,16 +97,10 @@ namespace AvengersTheFallen
             map.Draw(e.Graphics);
         }
 
-		private void Form1_MouseClick(object sender, MouseEventArgs e)
-		{
-			MessageBox.Show("Mouse clicked");
-			avenger.AddShot();
-			Invalidate(true);
-		}
 
-		private void Form1_MouseDown(object sender, MouseEventArgs e)
+		private void panel1_MouseClick(object sender, MouseEventArgs e)
 		{
-			MessageBox.Show("Mouse down");
+			//MessageBox.Show("Mouse clicked");
 			avenger.AddShot();
 			Invalidate(true);
 		}

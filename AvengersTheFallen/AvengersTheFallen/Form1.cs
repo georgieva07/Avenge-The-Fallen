@@ -55,11 +55,6 @@ namespace AvengersTheFallen
 			panel1.Invalidate(true);
 		}
 
-		private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-			e.Graphics.Clear(Color.White);
-        }
-
 		private void Form1_KeyDown(object sender, KeyEventArgs e)
 		{
 			if(e.KeyData == Keys.A)
@@ -103,6 +98,11 @@ namespace AvengersTheFallen
 			//MessageBox.Show("Mouse clicked");
 			avenger.AddShot();
 			Invalidate(true);
+		}
+
+		private void Form1_Paint(object sender, PaintEventArgs e)
+		{
+			e.Graphics.Clear(Color.White);
 		}
 	}
 }

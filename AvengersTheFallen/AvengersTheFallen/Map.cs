@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace AvengersTheFallen
 {
-    class Map
+    public class Map
     {
-        int height;//visina na prozorecot
-        int width;//sirina na prozorecot
+        public int height;//visina na prozorecot
+        public int width;//sirina na prozorecot
         Image backgroundImage;//slika za pozadina
         string level;//nivo
         List<Obstacle> obstacles;//lista koordinati na site prepreki

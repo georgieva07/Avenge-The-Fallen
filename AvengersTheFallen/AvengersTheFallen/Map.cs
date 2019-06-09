@@ -141,5 +141,70 @@ namespace AvengersTheFallen
                 obstacles.RemoveAt(i);
             return t;
         }
+
+		public void checkCollisionWeapon(Avenger avenger)
+		{
+			for (int i = 0; i < obstacles.Count; i++)
+			{
+				for (int j = 0; j < avenger.shots.Count; j++)
+				{
+					Point p = obstacles[i].position;
+					if (avenger.shots[j].Location.X > p.X && avenger.shots[j].Location.X < p.X + obstacles[i].image.Width)
+					{
+						if (avenger.shots[j].Location.Y > p.Y && avenger.shots[j].Location.Y < p.Y + obstacles[i].image.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							obstacles.RemoveAt(i);
+						}
+						else if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + obstacles[i].image.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							obstacles.RemoveAt(i);
+						}
+					}
+					else if (avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width > p.X && avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width < p.X + obstacles[i].image.Width)
+					{
+						if (avenger.shots[j].Location.Y > p.Y && avenger.shots[j].Location.Y < p.Y + obstacles[i].image.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							obstacles.RemoveAt(i);
+						}
+						else if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + obstacles[i].image.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							obstacles.RemoveAt(i);
+						}
+					}
+
+
+					else if (p.X > avenger.shots[j].Location.X && p.X < avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width)
+					{
+						if (p.Y > avenger.shots[j].Location.Y && p.Y < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							obstacles.RemoveAt(i);
+						}
+						else if (p.Y + obstacles[i].image.Height > avenger.shots[j].Location.Y && p.Y + obstacles[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							obstacles.RemoveAt(i);
+						}
+					}
+					else if (p.X + obstacles[i].image.Width > avenger.shots[j].Location.X && p.X + obstacles[i].image.Width < avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width)
+					{
+						if (p.Y > avenger.shots[j].Location.Y && p.Y < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							obstacles.RemoveAt(i);
+						}
+						else if (p.Y + obstacles[i].image.Height > avenger.shots[j].Location.Y && p.Y + obstacles[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							obstacles.RemoveAt(i);
+						}
+					}
+				}
+			}
+		}
     }
 }

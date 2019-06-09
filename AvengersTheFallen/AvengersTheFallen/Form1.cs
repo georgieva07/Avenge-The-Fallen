@@ -78,6 +78,7 @@ namespace AvengersTheFallen
         {
             map.moveObstacles();
 			avenger.MoveShots();
+			map.checkCollisionWeapon(avenger);
             Boolean t = map.checkCollisionObstacle(avenger);
             if (t) { }
             //avenger takes damage

@@ -13,12 +13,12 @@ namespace AvengersTheFallen
         int width;//sirina na prozorecot
         Image backgroundImage;//slika za pozadina
         String level;//nivo
-        List<Point> obstacles;//lista koordinati na site prepreki
+        List<Obstacle> obstacles;//lista koordinati na site prepreki
         public Map(int h, int w, String l)
         {
             height = h;
             width = w;
-            obstacles = new List<Point>();
+            obstacles = new List<Obstacle>();
             level = l;
         }
 
@@ -30,7 +30,7 @@ namespace AvengersTheFallen
             Brush h = new SolidBrush(Color.Red);
             for (int i = 0; i < obstacles.Count; i++)
             {
-                g.FillRectangle(h, obstacles[i].X, obstacles[i].Y, 50, 100);
+                g.FillRectangle(h, obstacles[i].position.X, obstacles[i].position.Y, 50, 100);
             }
             h.Dispose();
         }
@@ -41,10 +41,10 @@ namespace AvengersTheFallen
             int i = 0;
             for (i = 0; i < obstacles.Count; i++)
             {
-                Point k = obstacles[i];
-                k.Y = k.Y + 4;
+                Point k = obstacles[i].position;
+                k.Y = k.Y + 2;
                 if (k.Y < height)
-                    obstacles[i] = k;
+                    obstacles[i].position = k;
                 else
                 {
                     obstacles.RemoveAt(i);
@@ -59,19 +59,19 @@ namespace AvengersTheFallen
             Random r = new Random();
             int a = -1, b = -1, c = -1;
             a = r.Next(0, width - 10);
-            obstacles.Add(new Point(a, -100));
+            obstacles.Add(new Obstacle(new Point(a, -100)));
             b = r.Next(0, width - 10);
             while (b >= a - 100 && b <= a + 100)
             {
                 b = r.Next(0, width - 10);
             }
-            obstacles.Add(new Point(b, -100));
+            obstacles.Add(new Obstacle(new Point(b, -100)));
             c = r.Next(0, width - 10);
             while ((c >= a - 100 && c <= a + 100) || (c >= b - 100 && c <= b + 100))
             {
                 c = r.Next(0, width - 10);
             }
-            obstacles.Add(new Point(c, -100));
+            obstacles.Add(new Obstacle(new Point(c, -100)));
         }
 
         public Boolean checkCollisionObstacle(Avenger avenger)
@@ -83,7 +83,7 @@ namespace AvengersTheFallen
             int i;
             for (i = 0; i < obstacles.Count; i++)
             {
-                Point p = obstacles[i];
+                Point p = obstacles[i].position;
                 if (a.X > p.X && a.X < p.X + 50)
                 {
                     if (a.Y > p.Y && a.Y < p.Y + 100)

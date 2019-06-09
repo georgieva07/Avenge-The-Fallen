@@ -15,21 +15,21 @@ namespace AvengersTheFallen
 	{
 		private Avenger avenger;
         Map map;
-        Boolean t;
 
 		public Form1()
 		{
             InitializeComponent();
             this.DoubleBuffered = true;
-            timerGenerateObstacles.Interval = timerMapMove.Interval * 54;
+            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
             timerMapMove.Enabled = true;
             timerGenerateObstacles.Enabled = true;
             this.Height = 500;
             this.Width = 1000;
-            t = false;
             avenger = new Avenger("Thor", new Point(this.Width / 2, this.Height - 130));
             avenger.Resize(1000, 500);
             map = new Map(this.Height, this.Width, avenger.Name);
+            TimerGenerateObstacles_Tick(null, null);
+
         }
 
 		private void Form1_Resize(object sender, EventArgs e)
@@ -39,17 +39,11 @@ namespace AvengersTheFallen
 		}
 
 		private void Form1_Paint(object sender, PaintEventArgs e)
-		{
-            if (!t)
-			    e.Graphics.Clear(Color.White);
-            else
-                e.Graphics.Clear(Color.Green);
-            Pen pen = new Pen(Color.White);
-            e.Graphics.DrawRectangle(pen, 0, 0, 1, 1);
-            e.Graphics.ScaleTransform(((float)(this.Height * 2) / 1000.0F), ((float)(this.Height) / 500.0F));
+        {
+            e.Graphics.Clear(Color.White);
+            e.Graphics.ScaleTransform(((float)(this.Height * 2) / 1000), ((float)(this.Height) / 500));
             avenger.Draw(e.Graphics);
             map.Draw(e.Graphics);
-            pen.Dispose();
         }
 
 		private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -76,6 +70,8 @@ namespace AvengersTheFallen
         {
             map.moveObstacles();
             t = map.checkCollisionObstacle(avenger);
+            if(t)
+
             Invalidate();
         }
 

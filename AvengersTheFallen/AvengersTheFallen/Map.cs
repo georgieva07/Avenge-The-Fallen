@@ -39,7 +39,7 @@ namespace AvengersTheFallen
             for (i = 0; i < obstacles.Count; i++)
             {
                 Point k = obstacles[i].position;
-                k.Y = k.Y + 2;
+                k.Y = k.Y + 4;
                 if (k.Y < height)
                     obstacles[i].position = k;
                 else
@@ -53,20 +53,19 @@ namespace AvengersTheFallen
         public void AddObstacles()
         {
             //dodava tri random prepreki na mapata
-            Random r = new Random();
             int a = -1, b = -1, c = -1;
-            a = r.Next(0, width - 10);
+            a = Form1.r.Next(0, width - 100);
             obstacles.Add(new Obstacle(new Point(a, -100), level));
-            b = r.Next(0, width - 10);
+            b = Form1.r.Next(0, width - 10);
             while (b >= a - 100 && b <= a + 100)
             {
-                b = r.Next(0, width - 10);
+                b = Form1.r.Next(0, width - 10);
             }
             obstacles.Add(new Obstacle(new Point(b, -100), level));
-            c = r.Next(0, width - 10);
+            c = Form1.r.Next(0, width - 10);
             while ((c >= a - 100 && c <= a + 100) || (c >= b - 100 && c <= b + 100))
             {
-                c = r.Next(0, width - 10);
+                c = Form1.r.Next(0, width - 10);
             }
             obstacles.Add(new Obstacle(new Point(c, -100), level));
         }

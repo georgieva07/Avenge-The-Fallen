@@ -19,6 +19,8 @@ namespace AvengersTheFallen
 		{
 			Name = name;
 			Position = position;
+            width = 1000;
+            height = 500;
 			if (Name == "IronMan")
 			{
 				Character = Resources.ironman;
@@ -46,11 +48,6 @@ namespace AvengersTheFallen
             Character = new Bitmap(Character, new Size(40, 90));
         }
 
-		public void Resize(int width, int height)
-		{
-            this.width = width;
-            this.height = height;
-		}
 		public void Draw(Graphics g)
 		{
 			g.DrawImage(Character, new Point(Position.X, Position.Y));

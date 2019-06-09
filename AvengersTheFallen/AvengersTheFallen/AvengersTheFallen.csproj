@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Avenger.cs" />
+    <Compile Include="DrawPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Map.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

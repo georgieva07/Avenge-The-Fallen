@@ -25,8 +25,7 @@ namespace AvengersTheFallen
             this.level = level;
             if(level == "Thor")
             {
-                Random r = new Random();
-                int k = r.Next(0, Enum.GetNames(typeof(Thor)).Length);
+                int k = Form1.r.Next(0, Enum.GetNames(typeof(Thor)).Length);
                 Thor e = (Thor)k;
                 if (Thor.car == e)
                     image = new Bitmap(Resources.car,new Size(50,100));//prezemeno od [www.kisspng.com]

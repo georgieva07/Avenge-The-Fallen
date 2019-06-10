@@ -10,7 +10,7 @@ namespace AvengersTheFallen
 {
     class Obstacle
     {
-        public Point position { get; set; }
+        public Point Location { get; set; }
         public Image image;
         string level;
         enum Thor
@@ -21,7 +21,7 @@ namespace AvengersTheFallen
         }
         public Obstacle(Point p, string level)
         {
-            position = p;
+            Location = p;
             this.level = level;
             if(level == "Thor")
             {
@@ -38,7 +38,7 @@ namespace AvengersTheFallen
 
         public void Draw(Graphics g)
         {
-            g.DrawImage(image, position.X, position.Y, image.Width, image.Height);
+            g.DrawImage(image, Location.X, Location.Y, image.Width, image.Height);
         }
     }
 }

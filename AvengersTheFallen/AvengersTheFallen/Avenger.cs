@@ -10,7 +10,7 @@ namespace AvengersTheFallen
 {
 	public class Avenger
 	{
-		public Point Position { get; set; }
+		public Point Location { get; set; }
 		public string Name { get; set; }
 		public Image Character { get; set; }
         public int width, height;
@@ -19,7 +19,7 @@ namespace AvengersTheFallen
 		public Avenger(string name, Point position)
 		{
 			Name = name;
-			Position = position;
+			Location = position;
             width = 1000;
             height = 500;
 			shots = new List<Weapon>();
@@ -52,8 +52,8 @@ namespace AvengersTheFallen
 
 		public void Draw(Graphics g)
 		{
-			g.DrawImage(Character, new Point(Position.X, Position.Y));
-            g.DrawRectangle(new Pen(Color.Red), Position.X, Position.Y, Character.Width, Character.Height);
+			g.DrawImage(Character, new Point(Location.X, Location.Y));
+            g.DrawRectangle(new Pen(Color.Red), Location.X, Location.Y, Character.Width, Character.Height);
 
 			foreach (Weapon w in shots)
 			{
@@ -65,17 +65,17 @@ namespace AvengersTheFallen
 		{
 			if (direction == "Left")
 			{
-				if (Position.X - 10 >= 0)
+				if (Location.X - 10 >= 0)
 				{
-					Position = new Point(Position.X - 10, Position.Y);
+                    Location = new Point(Location.X - 10, Location.Y);
 				}
 				
 			}
 			if (direction == "Right")
 			{
-				if (Position.X + 4 <= width - Character.Width)
+				if (Location.X + 4 <= width - Character.Width)
 				{
-					Position = new Point(Position.X + 10, Position.Y);
+                    Location = new Point(Location.X + 10, Location.Y);
 				}
 			}
 		}
@@ -97,7 +97,7 @@ namespace AvengersTheFallen
 
 		public void AddShot()
 		{
-			shots.Add(new Weapon(Name, new Point(Position.X, Position.Y - 20)));
+			shots.Add(new Weapon(Name, new Point(Location.X, Location.Y - 20)));
 		}
 
 	}

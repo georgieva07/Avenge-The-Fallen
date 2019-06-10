@@ -157,4 +157,10 @@
   <data name="thor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ThorEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ThorEnemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThorEnemyWeapon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ThorEnemyWeapon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

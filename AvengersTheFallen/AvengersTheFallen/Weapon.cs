@@ -58,6 +58,14 @@ namespace AvengersTheFallen
 				Location = new Point(Location.X, Location.Y - 10);
 			}
 		}
+
+        public void MoveEnemy()
+        {
+            if (Location.Y - 10 <=500)
+            {
+                Location = new Point(Location.X, Location.Y + 6);
+            }
+        }
 	}
 
 }

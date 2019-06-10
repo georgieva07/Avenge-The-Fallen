@@ -25,8 +25,10 @@ namespace AvengersTheFallen
             this.DoubleBuffered = true;
             r = new Random();
 			//tickCount = 0;
-            timerGenerateObstacles.Interval = timerMapMove.Interval * 54;
+            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
+            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
             timerMapMove.Enabled = true;
+            timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
             this.Height = 500;
             this.Width = 1000;
@@ -78,13 +80,16 @@ namespace AvengersTheFallen
         private void TimerGenerateObstacles_Tick(object sender, EventArgs e)
         {
             map.AddObstacles();
-            Invalidate(true);
+            map.AddEnemies();
+            panel1.Invalidate();
         }
 
         private void TimerMapMove_Tick(object sender, EventArgs e)
         {
             map.moveObstacles();
-			avenger.MoveShots();
+            map.moveEnemies();
+            map.moveEnemyShots();
+            avenger.MoveShots();
 			map.checkCollisionWeapon(avenger);
             Boolean t = map.checkCollisionObstacle(avenger);
             if (t) { }
@@ -103,7 +108,12 @@ namespace AvengersTheFallen
 
 		private void Form1_Paint(object sender, PaintEventArgs e)
 		{
-			e.Graphics.Clear(Color.White);
+			e.Graphics.Clear(Color.Black);
 		}
-	}
+
+        private void TimerEnemyShoot_Tick(object sender, EventArgs e)
+        {
+            map.shoot();
+        }
+    }
 }

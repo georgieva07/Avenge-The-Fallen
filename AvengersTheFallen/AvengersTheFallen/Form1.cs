@@ -71,9 +71,9 @@ namespace AvengersTheFallen
 			}
 			if(e.KeyData == Keys.Space)
 			{
-                if (avenger.Name == "Hulk")
+                /*if (avenger.Name == "Hulk")
                     avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
-                else
+                else*/
 				    avenger.AddShot();	
 			}
             panel1.Invalidate(true);
@@ -93,10 +93,14 @@ namespace AvengersTheFallen
             map.moveEnemies();
             map.moveEnemyShots();
             avenger.MoveShots();
-			map.checkCollisionWeapon(avenger);
-            Boolean t = map.checkCollisionObstacle(avenger);
-            if (t) { }
-            //avenger takes damage
+			map.checkCollisionWeaponObstacle(avenger);
+			map.checkCollisionWeaponEnemy(avenger);
+			
+			if (map.checkCollisionAvengerObstacle(avenger) || map.checkCollisionAvengerEnemy(avenger) || map.checkCollisionAvengerEnemyWeapon(avenger))
+			{
+				 //avenger takes damage
+			}
+           
             panel1.Invalidate(true);
         }
 

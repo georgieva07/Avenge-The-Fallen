@@ -135,76 +135,145 @@ namespace AvengersTheFallen
             enemies.Add(new Enemy(new Point(c, -100), level));
         }
 
-        public Boolean checkCollisionObstacle(Avenger avenger)
-        {
-            //vraka true ako avengerot se sudri so nekoja prepreka
-            Point a = avenger.Location;
-            Boolean t = false;
-            int i;
-            for (i = 0; i < obstacles.Count; i++)
-            {
-                Point p = obstacles[i].Location;
-                if (a.X > p.X && a.X < p.X + obstacles[i].image.Width)
-                {
-                    if (a.Y > p.Y && a.Y < p.Y + obstacles[i].image.Height)
-                    {
-                        t = true;
-                        break;
-                    }
-                    if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + obstacles[i].image.Height)
-                    {
-                        t = true;
-                        break;
-                    }
-                }
-                if (a.X + avenger.Character.Width > p.X && a.X + avenger.Character.Width < p.X + obstacles[i].image.Width)
-                {
-                    if (a.Y > p.Y && a.Y < p.Y + obstacles[i].image.Height)
-                    {
-                        t = true;
-                        break;
-                    }
-                    if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + obstacles[i].image.Height)
-                    {
-                        t = true;
-                        break;
-                    }
-                }
+		public Boolean checkCollisionAvengerObstacle(Avenger avenger)
+		{
+			//vraka true ako avengerot se sudri so nekoja prepreka
+			Point a = avenger.Location;
+			Boolean t = false;
+			int i;
+			for (i = 0; i < obstacles.Count; i++)
+			{
+				Point p = obstacles[i].Location;
+				if (a.X > p.X && a.X < p.X + obstacles[i].image.Width)
+				{
+					if (a.Y > p.Y && a.Y < p.Y + obstacles[i].image.Height)
+					{
+						t = true;
+						break;
+					}
+					if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + obstacles[i].image.Height)
+					{
+						t = true;
+						break;
+					}
+				}
+				if (a.X + avenger.Character.Width > p.X && a.X + avenger.Character.Width < p.X + obstacles[i].image.Width)
+				{
+					if (a.Y > p.Y && a.Y < p.Y + obstacles[i].image.Height)
+					{
+						t = true;
+						break;
+					}
+					if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + obstacles[i].image.Height)
+					{
+						t = true;
+						break;
+					}
+				}
 
 
-                if (p.X > a.X && p.X < a.X + avenger.Character.Width)
-                {
-                    if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height)
-                    {
-                        t = true;
-                        break;
-                    }
-                    if (p.Y + obstacles[i].image.Height > a.Y && p.Y + obstacles[i].image.Height < a.Y + avenger.Character.Height)
-                    {
-                        t = true;
-                        break;
-                    }
-                }
-                if (p.X + obstacles[i].image.Width > a.X && p.X + obstacles[i].image.Width < a.X + avenger.Character.Width)
-                {
-                    if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height)
-                    {
-                        t = true;
-                        break;
-                    }
-                    if (p.Y + obstacles[i].image.Height > a.Y && p.Y + obstacles[i].image.Height < a.Y + avenger.Character.Height)
-                    {
-                        t = true;
-                        break;
-                    }
-                }
-            }
-            if (t)
-                obstacles.RemoveAt(i);
-            return t;
-        }
+				if (p.X > a.X && p.X < a.X + avenger.Character.Width)
+				{
+					if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height)
+					{
+						t = true;
+						break;
+					}
+					if (p.Y + obstacles[i].image.Height > a.Y && p.Y + obstacles[i].image.Height < a.Y + avenger.Character.Height)
+					{
+						t = true;
+						break;
+					}
+				}
+				if (p.X + obstacles[i].image.Width > a.X && p.X + obstacles[i].image.Width < a.X + avenger.Character.Width)
+				{
+					if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height)
+					{
+						t = true;
+						break;
+					}
+					if (p.Y + obstacles[i].image.Height > a.Y && p.Y + obstacles[i].image.Height < a.Y + avenger.Character.Height)
+					{
+						t = true;
+						break;
+					}
+				}
+			}
+			if (t)
+				obstacles.RemoveAt(i);
+			return t;
+		}
 
-		public void checkCollisionWeapon(Avenger avenger)
+		public Boolean checkCollisionAvengerEnemy(Avenger avenger)
+		{
+			//vraka true ako avengerot se sudri so nekoja prepreka
+			Point a = avenger.Location;
+			Boolean t = false;
+			int i;
+			for (i = 0; i < enemies.Count; i++)
+			{
+				Point p = enemies[i].Location;
+				if (a.X > p.X && a.X < p.X + enemies[i].image.Width)
+				{
+					if (a.Y > p.Y && a.Y < p.Y + enemies[i].image.Height)
+					{
+						t = true;
+						break;
+					}
+					if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + enemies[i].image.Height)
+					{
+						t = true;
+						break;
+					}
+				}
+				if (a.X + avenger.Character.Width > p.X && a.X + avenger.Character.Width < p.X + enemies[i].image.Width)
+				{
+					if (a.Y > p.Y && a.Y < p.Y + enemies[i].image.Height)
+					{
+						t = true;
+						break;
+					}
+					if (a.Y + avenger.Character.Height > p.Y && a.Y + avenger.Character.Height < p.Y + enemies[i].image.Height)
+					{
+						t = true;
+						break;
+					}
+				}
+
+
+				if (p.X > a.X && p.X < a.X + avenger.Character.Width)
+				{
+					if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height)
+					{
+						t = true;
+						break;
+					}
+					if (p.Y + enemies[i].image.Height > a.Y && p.Y + enemies[i].image.Height < a.Y + avenger.Character.Height)
+					{
+						t = true;
+						break;
+					}
+				}
+				if (p.X + enemies[i].image.Width > a.X && p.X + enemies[i].image.Width < a.X + avenger.Character.Width)
+				{
+					if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height)
+					{
+						t = true;
+						break;
+					}
+					if (p.Y + enemies[i].image.Height > a.Y && p.Y + enemies[i].image.Height < a.Y + avenger.Character.Height)
+					{
+						t = true;
+						break;
+					}
+				}
+			}
+			if (t)
+				enemies.RemoveAt(i);
+			return t;
+		}
+
+		public void checkCollisionWeaponObstacle(Avenger avenger)
 		{
 			for (int i = 0; i < obstacles.Count; i++)
 			{
@@ -275,11 +344,164 @@ namespace AvengersTheFallen
 						}
 					}
 				}
+
 			}
 		}
 
-        public Obstacle findNearObstacleHulk (Avenger avenger)
-        {
+		public Boolean checkCollisionAvengerEnemyWeapon(Avenger avenger)
+		{
+			bool t = false;
+			for (int i = 0; i < enemies.Count; i++)
+			{
+				for (int j = 0; j < enemies[i].shots.Count; j++)
+				{
+					Point p = enemies[i].shots[j].Location;
+					if (avenger.Location.X > p.X && avenger.Location.X < p.X + enemies[i].shots[j].WeaponImage.Width)
+					{
+						if (avenger.Location.Y > p.Y && avenger.Location.Y < p.Y + enemies[i].shots[j].WeaponImage.Height)
+						{
+							enemies[i].shots.RemoveAt(j);
+							t = true;
+							break;
+						}
+						if (avenger.Location.Y + avenger.Character.Height > p.Y && avenger.Location.Y + avenger.Character.Height < p.Y + enemies[i].shots[j].WeaponImage.Height)
+						{
+							enemies[i].shots.RemoveAt(j);
+							t = true;
+							break;
+						}
+					}
+					if (avenger.Location.X + avenger.Character.Width > p.X && avenger.Location.X + avenger.Character.Width < p.X + enemies[i].shots[j].WeaponImage.Width)
+					{
+						if (avenger.Location.Y > p.Y && avenger.Location.Y < p.Y + enemies[i].shots[j].WeaponImage.Height)
+						{
+							enemies[i].shots.RemoveAt(j);
+							t = true;
+							break;
+						}
+						if (avenger.Location.Y + avenger.Character.Height > p.Y && avenger.Location.Y + avenger.Character.Height < p.Y + enemies[i].shots[j].WeaponImage.Height)
+						{
+							enemies[i].shots.RemoveAt(j);
+							t = true;
+							break;
+						}
+					}
+
+
+
+					if (p.X > avenger.Location.X && p.X < avenger.Location.X + avenger.Character.Width)
+					{
+						if (p.Y > avenger.Location.Y && p.Y < avenger.Location.Y + avenger.Character.Height)
+						{
+							enemies[i].shots.RemoveAt(j);
+							t = true;
+							break;
+						}
+						if (p.Y + enemies[i].shots[j].WeaponImage.Height > avenger.Location.Y && p.Y + enemies[i].shots[j].WeaponImage.Height < avenger.Location.Y + avenger.Character.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							t = true;
+							break;
+						}
+					}
+					if (p.X + enemies[i].shots[j].WeaponImage.Width > avenger.Location.X && p.X + enemies[i].shots[j].WeaponImage.Width < avenger.Location.X + avenger.Character.Width)
+					{
+						if (p.Y > avenger.Location.Y && p.Y < avenger.Location.Y + avenger.Character.Height)
+						{
+							enemies[i].shots.RemoveAt(j);
+							t = true;
+							break;
+						}
+						if (p.Y + enemies[i].shots[j].WeaponImage.Height > avenger.Location.Y && p.Y + enemies[i].shots[j].WeaponImage.Height < avenger.Location.Y + avenger.Character.Height)
+						{
+							enemies[i].shots.RemoveAt(j);
+							t = true;
+							break;
+						}
+					}
+				}
+
+			}
+
+			return t;
+		}
+		public void checkCollisionWeaponEnemy(Avenger avenger)
+		{
+			for (int i = 0; i < enemies.Count; i++)
+			{
+				for (int j = 0; j < avenger.shots.Count; j++)
+				{
+					Point p = enemies[i].Location;
+					if (avenger.shots[j].Location.X > p.X && avenger.shots[j].Location.X < p.X + enemies[i].image.Width)
+					{
+						if (avenger.shots[j].Location.Y > p.Y && avenger.shots[j].Location.Y < p.Y + enemies[i].image.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							enemies.RemoveAt(i);
+							break;
+						}
+						if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + enemies[i].image.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							enemies.RemoveAt(i);
+							break;
+						}
+					}
+					if (avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width > p.X && avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width < p.X + enemies[i].image.Width)
+					{
+						if (avenger.shots[j].Location.Y > p.Y && avenger.shots[j].Location.Y < p.Y + enemies[i].image.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							enemies.RemoveAt(i);
+							break;
+						}
+						if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + enemies[i].image.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							enemies.RemoveAt(i);
+							break;
+						}
+					}
+
+
+
+					if (p.X > avenger.shots[j].Location.X && p.X < avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width)
+					{
+						if (p.Y > avenger.shots[j].Location.Y && p.Y < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							enemies.RemoveAt(i);
+							break;
+						}
+						if (p.Y + enemies[i].image.Height > avenger.shots[j].Location.Y && p.Y + enemies[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							enemies.RemoveAt(i);
+							break;
+						}
+					}
+					if (p.X + enemies[i].image.Width > avenger.shots[j].Location.X && p.X + enemies[i].image.Width < avenger.shots[j].Location.X + avenger.shots[j].WeaponImage.Width)
+					{
+						if (p.Y > avenger.shots[j].Location.Y && p.Y < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							enemies.RemoveAt(i);
+							break;
+						}
+						if (p.Y + enemies[i].image.Height > avenger.shots[j].Location.Y && p.Y + enemies[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
+						{
+							avenger.shots.RemoveAt(j);
+							enemies.RemoveAt(i);
+							break;
+						}
+					}
+				}
+
+			}
+		}
+
+		public Obstacle findNearObstacleHulk (Avenger avenger)
+		{
             Point a = new Point(avenger.Location.X - 20, avenger.Location.Y - 20);
             Obstacle t = null;
             int i;

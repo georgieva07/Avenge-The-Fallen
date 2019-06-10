@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AvengersTheFallen
 {
-    class Obstacle
+    public class Obstacle
     {
         public Point Location { get; set; }
         public Image image;
@@ -23,7 +23,7 @@ namespace AvengersTheFallen
         {
             Location = p;
             this.level = level;
-            if(level == "Thor")
+            if(level == "Hulk" || level == "Thor")
             {
                 int k = Form1.r.Next(0, Enum.GetNames(typeof(Thor)).Length);
                 Thor e = (Thor)k;

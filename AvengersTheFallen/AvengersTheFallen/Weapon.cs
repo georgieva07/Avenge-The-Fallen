@@ -46,7 +46,16 @@ namespace AvengersTheFallen
 			WeaponImage = new Bitmap(WeaponImage, new Size(30, 40));
 		}
 
-		public void Draw(Graphics g)
+        public Weapon(string owner, Point location, Obstacle o)
+        {
+            WeaponImage = o.image;
+            WeaponImage.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            WeaponImage = new Bitmap(o.image, new Size(o.image.Width, o.image.Height));
+            Owner = owner;
+            Location = location;
+        }
+
+        public void Draw(Graphics g)
 		{
 			g.DrawImage(WeaponImage, Location);
 		}
@@ -63,7 +72,7 @@ namespace AvengersTheFallen
         {
             if (Location.Y - 10 <=500)
             {
-                Location = new Point(Location.X, Location.Y + 6);
+                Location = new Point(Location.X, Location.Y + 10);
             }
         }
 	}

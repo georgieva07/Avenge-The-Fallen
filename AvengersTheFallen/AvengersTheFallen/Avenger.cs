@@ -97,8 +97,13 @@ namespace AvengersTheFallen
 
 		public void AddShot()
 		{
-			shots.Add(new Weapon(Name, new Point(Location.X, Location.Y - 20)));
+	        shots.Add(new Weapon(Name, new Point(Location.X, Location.Y - 20)));
 		}
 
-	}
+        public void AddShotHulk(Obstacle o)
+        {
+            if(o!=null)
+                shots.Add(new Weapon(Name, new Point(Location.X, Location.Y - 20), o));
+        }
+    }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AvengersTheFallen
 {
-    class Enemy
+    public class Enemy
     {
         public Point Location { get; set; }
         public Image image;
@@ -18,7 +18,7 @@ namespace AvengersTheFallen
         {
             this.level = level;
             this.Location = Location;
-            if(level == "Thor")
+            if(level == "Thor"|| level == "Hulk")
             {
                 image = new Bitmap(Resources.ThorEnemy, new Size(90, 90));
                 shots = new List<Weapon>();

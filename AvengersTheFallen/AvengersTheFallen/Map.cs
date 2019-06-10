@@ -14,7 +14,7 @@ namespace AvengersTheFallen
         Image backgroundImage;//slika za pozadina
         string level;//nivo
         List<Obstacle> obstacles;//lista koordinati na site prepreki
-        List<Enemy> enemies;
+        List<Enemy> enemies;//lista koordinati na site neprijateli
 
         public Map(int h, int w, String l)
         {
@@ -277,5 +277,69 @@ namespace AvengersTheFallen
 				}
 			}
 		}
+
+        public Obstacle findNearObstacleHulk (Avenger avenger)
+        {
+            Point a = new Point(avenger.Location.X - 20, avenger.Location.Y - 20);
+            Obstacle t = null;
+            int i;
+            for (i = 0; i < obstacles.Count; i++)
+            {
+                Point p = obstacles[i].Location;
+                if (a.X > p.X && a.X < p.X + obstacles[i].image.Width)
+                {
+                    if (a.Y > p.Y && a.Y < p.Y + obstacles[i].image.Height)
+                    {
+                        break;
+                    }
+                    if (a.Y + avenger.Character.Height + 40 > p.Y && a.Y + avenger.Character.Height + 40 < p.Y + obstacles[i].image.Height)
+                    {
+                        break;
+                    }
+                }
+                if (a.X + avenger.Character.Width + 40 > p.X && a.X + avenger.Character.Width + 40 < p.X + obstacles[i].image.Width)
+                {
+                    if (a.Y > p.Y && a.Y < p.Y + obstacles[i].image.Height)
+                    {
+                        break;
+                    }
+                    if (a.Y + avenger.Character.Height + 40 > p.Y && a.Y + avenger.Character.Height + 40 < p.Y + obstacles[i].image.Height)
+                    {
+                        break;
+                    }
+                }
+
+
+                if (p.X > a.X && p.X < a.X + avenger.Character.Width + 40)
+                {
+                    if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height + 40)
+                    {
+                        break;
+                    }
+                    if (p.Y + obstacles[i].image.Height > a.Y && p.Y + obstacles[i].image.Height < a.Y + avenger.Character.Height + 40)
+                    {
+                        break;
+                    }
+                }
+                if (p.X + obstacles[i].image.Width > a.X && p.X + obstacles[i].image.Width  < a.X + avenger.Character.Width + 40)
+                {
+                    if (p.Y > a.Y && p.Y < a.Y + avenger.Character.Height + 40)
+                    {
+                        break;
+                    }
+                    if (p.Y + obstacles[i].image.Height > a.Y && p.Y + obstacles[i].image.Height < a.Y + avenger.Character.Height + 40)
+                    {
+                        break;
+                    }
+                }
+            }
+            if (i != obstacles.Count)
+            {
+                t = new Obstacle(obstacles[i].Location, "Hulk");
+                t.image = obstacles[i].image;
+                obstacles.RemoveAt(i);
+            }
+            return t;
+        }
     }
 }

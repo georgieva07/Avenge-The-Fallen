@@ -26,14 +26,14 @@ namespace AvengersTheFallen
             r = new Random();
 			//tickCount = 0;
             timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
+            timerEnemyShoot.Interval = timerMapMove.Interval * 54;
             timerMapMove.Enabled = true;
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
             this.Height = 500;
             this.Width = 1000;
             Form1_Resize(null, null);
-            avenger = new Avenger("Thor", new Point(1000 / 2, 500 - 90));
+            avenger = new Avenger("Hulk", new Point(1000 / 2, 500 - 90));
             map = new Map(500, 1000, avenger.Name);
             TimerGenerateObstacles_Tick(null, null);
         }
@@ -51,7 +51,7 @@ namespace AvengersTheFallen
             else
             {
                 panel1.Width = this.Width;
-                panel1.Height = this.Width / 2 - 20;
+                panel1.Height = this.Width / 2;
                 x = 0;
                 y = (this.Height - 40 - panel1.Height) / 2;
             }
@@ -71,7 +71,10 @@ namespace AvengersTheFallen
 			}
 			if(e.KeyData == Keys.Space)
 			{
-				avenger.AddShot();	
+                if (avenger.Name == "Hulk")
+                    avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
+                else
+				    avenger.AddShot();	
 			}
             panel1.Invalidate(true);
         }

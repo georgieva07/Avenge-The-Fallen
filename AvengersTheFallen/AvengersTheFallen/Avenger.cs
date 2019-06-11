@@ -15,6 +15,7 @@ namespace AvengersTheFallen
 		public Image Character { get; set; }
         public int width, height;
 		public List<Weapon> shots { get; set; }
+		public int Damage { get; set; }
 
 		public Avenger(string name, Point position)
 		{
@@ -22,6 +23,7 @@ namespace AvengersTheFallen
 			Location = position;
             width = 1000;
             height = 500;
+			Damage = 0;
 			shots = new List<Weapon>();
 			if (Name == "IronMan")
 			{
@@ -105,5 +107,11 @@ namespace AvengersTheFallen
             if(o!=null)
                 shots.Add(new Weapon(Name, new Point(Location.X, Location.Y - 20), o));
         }
+
+		public void TakeDamage()
+		{
+			Damage++;
+		}
+
     }
 }

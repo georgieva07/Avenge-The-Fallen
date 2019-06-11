@@ -98,18 +98,39 @@ namespace AvengersTheFallen
 			
 			if (map.checkCollisionAvengerObstacle(avenger) || map.checkCollisionAvengerEnemy(avenger) || map.checkCollisionAvengerEnemyWeapon(avenger))
 			{
-				 //avenger takes damage
+				//avenger takes damage
+				avenger.TakeDamage();
 			}
-           
+			
+			if (avenger.Damage == 3)
+			{
+				timerMapMove.Stop();
+				if (MessageBox.Show("GAME OVER\nDo you want to start again?", "Game over", MessageBoxButtons.YesNo) == DialogResult.Yes)
+				{
+					avenger = new Avenger("Hulk", new Point(1000 / 2, 500 - 90));
+					map = new Map(500, 1000, avenger.Name);
+					TimerGenerateObstacles_Tick(null, null);
+					timerMapMove.Start();
+				}
+				else
+				{
+					this.Close();
+				}
+			}
             panel1.Invalidate(true);
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.Clear(Color.White);
+			if (avenger.Damage == 3)
+			{
+				e.Graphics.Clear(Color.White);
+			}
+			e.Graphics.Clear(Color.White);
             e.Graphics.ScaleTransform((float)(panel1.Width / 1000.0F), ((float)(panel1.Height) / 500.0F));
             avenger.Draw(e.Graphics);
             map.Draw(e.Graphics);
+			
         }
 
 

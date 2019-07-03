@@ -29,3 +29,4 @@ C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\
 C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.pdb
 C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.Form1.resources
 D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.GameOver.resources
+C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.GameOver.resources

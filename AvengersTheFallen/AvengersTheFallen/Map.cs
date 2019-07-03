@@ -121,13 +121,13 @@ namespace AvengersTheFallen
             int a = -1, b = -1, c = -1;
             a = Form1.r.Next(0, width - 100);
             enemies.Add(new Enemy(new Point(a, -100), level));
-            b = Form1.r.Next(0, width - 10);
+            b = Form1.r.Next(0, width - 100);
             while (b >= a - 100 && b <= a + 100)
             {
                 b = Form1.r.Next(0, width - 100);
             }
             enemies.Add(new Enemy(new Point(b, -100), level));
-            c = Form1.r.Next(0, width - 10);
+            c = Form1.r.Next(0, width - 100);
             while ((c >= a - 100 && c <= a + 100) || (c >= b - 100 && c <= b + 100))
             {
                 c = Form1.r.Next(0, width - 100);

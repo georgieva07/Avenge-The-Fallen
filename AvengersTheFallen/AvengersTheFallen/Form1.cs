@@ -39,17 +39,17 @@ namespace AvengersTheFallen
 		private void Form1_Resize(object sender, EventArgs e)
 		{
             int x = 0, y = 0;
-            if(this.Width> (this.Height-40) * 2)
+            if(this.Width - 16 >= (this.Height - 40) * 2)
             {
-                panel1.Height = this.Height - 40 ;
+                panel1.Height = this.Height - 40;
                 panel1.Width = panel1.Height * 2;
+                x = (this.Width - 16 - panel1.Width) / 2;
                 y = 0;
-                x = (this.Width - panel1.Width) / 2;
             }
             else
             {
-                panel1.Width = this.Width;
-                panel1.Height = this.Width / 2;
+                panel1.Width = this.Width - 16;
+                panel1.Height = panel1.Width / 2;
                 x = 0;
                 y = (this.Height - 40 - panel1.Height) / 2;
             }
@@ -69,9 +69,9 @@ namespace AvengersTheFallen
 			}
 			if(e.KeyData == Keys.Space)
 			{
-                /*if (avenger.Name == "Hulk")
+                if (avenger.Name == "Hulk")
                     avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
-                else*/
+                else
 				    avenger.AddShot();	
 			}
             panel1.Invalidate(true);
@@ -134,10 +134,9 @@ namespace AvengersTheFallen
 			map.Draw(e.Graphics);
         }
 
-
 		private void Form1_Paint(object sender, PaintEventArgs e)
 		{
-			e.Graphics.Clear(Color.White);
+			e.Graphics.Clear(Color.Black);
 		}
 
         private void TimerEnemyShoot_Tick(object sender, EventArgs e)

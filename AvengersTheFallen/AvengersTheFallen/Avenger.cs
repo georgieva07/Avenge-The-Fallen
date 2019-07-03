@@ -75,7 +75,7 @@ namespace AvengersTheFallen
 			}
 			if (direction == "Right")
 			{
-				if (Location.X + 4 <= width - Character.Width)
+				if (Location.X + 10 <= width - Character.Width)
 				{
                     Location = new Point(Location.X + 10, Location.Y);
 				}

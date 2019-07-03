@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Avenger.cs" />
+    <Compile Include="Boss.cs" />
     <Compile Include="DrawPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -141,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ThorEnemyWeapon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thanos.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

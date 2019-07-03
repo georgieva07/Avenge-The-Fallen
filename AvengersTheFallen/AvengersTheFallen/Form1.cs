@@ -16,6 +16,7 @@ namespace AvengersTheFallen
 	{
 		private Avenger avenger;
         private Map map;
+		private Boss boss;
         public static Random r;
 
 		public Form1()
@@ -31,7 +32,8 @@ namespace AvengersTheFallen
             this.Height = 500;
             this.Width = 1000;
             Form1_Resize(null, null);
-            avenger = new Avenger("Hulk", new Point(1000 / 2, 500 - 90));
+            avenger = new Avenger("Thor", new Point(1000 / 2, 500 - 90));
+			boss = new Boss(new Point(1000/2, 0), r);
             map = new Map(500, 1000, avenger.Name);
             TimerGenerateObstacles_Tick(null, null);
         }
@@ -69,9 +71,9 @@ namespace AvengersTheFallen
 			}
 			if(e.KeyData == Keys.Space)
 			{
-                if (avenger.Name == "Hulk")
-                    avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
-                else
+                //if (avenger.Name == "Hulk")
+                    //avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
+                //else
 				    avenger.AddShot();	
 			}
             panel1.Invalidate(true);
@@ -80,48 +82,54 @@ namespace AvengersTheFallen
 
         private void TimerGenerateObstacles_Tick(object sender, EventArgs e)
         {
-            map.AddObstacles();
-            map.AddEnemies();
-            panel1.Invalidate();
+			if (map.Final == false)
+			{
+				map.AddObstacles();
+				map.AddEnemies();
+				panel1.Invalidate();
+			}
         }
 
         private void TimerMapMove_Tick(object sender, EventArgs e)
         {
-            map.moveObstacles();
-            map.moveEnemies();
-            map.moveEnemyShots();
-            avenger.MoveShots();
-			map.checkCollisionWeaponObstacle(avenger);
-			map.checkCollisionWeaponEnemy(avenger);
-			
-			if (map.checkCollisionAvengerObstacle(avenger) || map.checkCollisionAvengerEnemy(avenger) || map.checkCollisionAvengerEnemyWeapon(avenger))
+			if (map.Final == false)
 			{
-				avenger.TakeDamage();
+				map.moveObstacles();
+				map.moveEnemies();
+				map.moveEnemyShots();
+				avenger.MoveShots();
+				map.checkCollisionWeaponObstacle(avenger);
+				map.checkCollisionWeaponEnemy(avenger);
+
+				if (map.checkCollisionAvengerObstacle(avenger) || map.checkCollisionAvengerEnemy(avenger) || map.checkCollisionAvengerEnemyWeapon(avenger))
+				{
+					avenger.TakeDamage();
+				}
+
+				if (avenger.Damage == 3)
+				{
+					timerMapMove.Stop();
+					GameOver form = new GameOver();
+					if (form.ShowDialog() == DialogResult.OK)
+					{
+						Reset();
+					}
+					else
+					{
+						this.Close();
+					}
+				}
+
+				if(map.Progress == 20)
+				{
+					map.Final = true;
+					boss.Final = true;
+				}
 			}
-			
-			if (avenger.Damage == 3)
+			else
 			{
-				timerMapMove.Stop();
-				/*if (MessageBox.Show("GAME OVER\nDo you want to start again?", "Game over", MessageBoxButtons.YesNo) == DialogResult.Yes)
-				{
-					avenger = new Avenger("Hulk", new Point(1000 / 2, 500 - 90));
-					map = new Map(500, 1000, avenger.Name);
-					TimerGenerateObstacles_Tick(null, null);
-					timerMapMove.Start();
-				}
-				else
-				{
-					this.Close();
-				}*/
-				GameOver form = new GameOver();
-				if(form.ShowDialog() == DialogResult.OK)
-				{
-					Reset();
-				}
-				else
-				{
-					this.Close();
-				}
+				avenger.MoveShots();
+
 			}
             panel1.Invalidate(true);
         }
@@ -131,7 +139,12 @@ namespace AvengersTheFallen
 			e.Graphics.Clear(Color.White);
 			e.Graphics.ScaleTransform((float)(panel1.Width / 1000.0F), ((float)(panel1.Height) / 500.0F));
 			avenger.Draw(e.Graphics);
-			map.Draw(e.Graphics);
+
+			if(map.Final==false)
+				map.Draw(e.Graphics);
+
+			if(boss.Final)
+				boss.Draw(e.Graphics);
         }
 
 		private void Form1_Paint(object sender, PaintEventArgs e)
@@ -150,6 +163,14 @@ namespace AvengersTheFallen
 			map = new Map(500, 1000, avenger.Name);
 			TimerGenerateObstacles_Tick(null, null);
 			timerMapMove.Start();
+		}
+
+		private void timerBossMove_Tick(object sender, EventArgs e)
+		{
+			if(boss.Final == true)
+			{
+				boss.Move();
+			}
 		}
 	}
 }

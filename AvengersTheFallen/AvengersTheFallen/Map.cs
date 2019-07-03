@@ -15,6 +15,8 @@ namespace AvengersTheFallen
         string level;//nivo
         List<Obstacle> obstacles;//lista koordinati na site prepreki
         List<Enemy> enemies;//lista koordinati na site neprijateli
+		public bool Final = false;
+		public int Progress { get; set; }
 
         public Map(int h, int w, String l)
         {
@@ -23,20 +25,24 @@ namespace AvengersTheFallen
             obstacles = new List<Obstacle>();
             enemies = new List<Enemy>();
             level = l;
+			Progress = 0;
         }
 
         public void Draw(Graphics g)
         {
-            //ja iscrtuva mapata i preprekite na nea
-            //g.DrawImage(backgroundImage, p);
-            for (int i = 0; i < obstacles.Count; i++)
-            {
-                obstacles[i].Draw(g);
-            }
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                enemies[i].Draw(g);
-            }
+			//ja iscrtuva mapata i preprekite na nea
+			//g.DrawImage(backgroundImage, p);
+			if (Final == false)
+			{
+				for (int i = 0; i < obstacles.Count; i++)
+				{
+					obstacles[i].Draw(g);
+				}
+				for (int i = 0; i < enemies.Count; i++)
+				{
+					enemies[i].Draw(g);
+				}
+			}
         }
 
         public void moveObstacles()
@@ -274,6 +280,7 @@ namespace AvengersTheFallen
 		}
 
 		public void checkCollisionWeaponObstacle(Avenger avenger)
+		//detektira dali avengerot pogodil nekoja precka
 		{
 			for (int i = 0; i < obstacles.Count; i++)
 			{
@@ -286,12 +293,14 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							Progress++;
 							break;
 						}
 						if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + obstacles[i].image.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							Progress++;
 							break;
 						}
 					}
@@ -301,12 +310,14 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							Progress++;
 							break;
 						}
 						if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + obstacles[i].image.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							Progress++;
 							break;
 						}
 					}
@@ -319,12 +330,14 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							Progress++;
 							break;
 						}
 						if (p.Y + obstacles[i].image.Height > avenger.shots[j].Location.Y && p.Y + obstacles[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							Progress++;
 							break;
 						}
 					}
@@ -334,12 +347,14 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							Progress++;
 							break;
 						}
 						if (p.Y + obstacles[i].image.Height > avenger.shots[j].Location.Y && p.Y + obstacles[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							obstacles.RemoveAt(i);
+							Progress++;
 							break;
 						}
 					}
@@ -349,6 +364,7 @@ namespace AvengersTheFallen
 		}
 
 		public Boolean checkCollisionAvengerEnemyWeapon(Avenger avenger)
+		//detektira dali avengerot e pogoden od istrel na enemy
 		{
 			bool t = false;
 			for (int i = 0; i < enemies.Count; i++)
@@ -427,6 +443,7 @@ namespace AvengersTheFallen
 		}
 		public void checkCollisionWeaponEnemy(Avenger avenger)
 		{
+			//detektra dali avengerot pogodil enemy
 			for (int i = 0; i < enemies.Count; i++)
 			{
 				for (int j = 0; j < avenger.shots.Count; j++)
@@ -438,12 +455,14 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							enemies.RemoveAt(i);
+							Progress++;
 							break;
 						}
 						if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + enemies[i].image.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							enemies.RemoveAt(i);
+							Progress++;
 							break;
 						}
 					}
@@ -453,12 +472,14 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							enemies.RemoveAt(i);
+							Progress++;
 							break;
 						}
 						if (avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height > p.Y && avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height < p.Y + enemies[i].image.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							enemies.RemoveAt(i);
+							Progress++;
 							break;
 						}
 					}
@@ -471,12 +492,14 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							enemies.RemoveAt(i);
+							Progress++;
 							break;
 						}
 						if (p.Y + enemies[i].image.Height > avenger.shots[j].Location.Y && p.Y + enemies[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							enemies.RemoveAt(i);
+							Progress++;
 							break;
 						}
 					}
@@ -486,12 +509,14 @@ namespace AvengersTheFallen
 						{
 							avenger.shots.RemoveAt(j);
 							enemies.RemoveAt(i);
+							Progress++;
 							break;
 						}
 						if (p.Y + enemies[i].image.Height > avenger.shots[j].Location.Y && p.Y + enemies[i].image.Height < avenger.shots[j].Location.Y + avenger.shots[j].WeaponImage.Height)
 						{
 							avenger.shots.RemoveAt(j);
 							enemies.RemoveAt(i);
+							Progress++;
 							break;
 						}
 					}

@@ -25,17 +25,18 @@ namespace AvengersTheFallen
             this.DoubleBuffered = true;
             r = new Random();
             timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-            timerEnemyShoot.Interval = timerMapMove.Interval * 54;
+            timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
+            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
             timerMapMove.Enabled = true;
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
+            timerGenerateEnemies.Enabled = true;
             this.Height = 500;
             this.Width = 1000;
             Form1_Resize(null, null);
             avenger = new Avenger("Thor", new Point(1000 / 2, 500 - 90));
 			boss = new Boss(new Point(1000/2, 0), r);
             map = new Map(500, 1000, avenger.Name);
-            TimerGenerateObstacles_Tick(null, null);
         }
 
 		private void Form1_Resize(object sender, EventArgs e)
@@ -79,15 +80,23 @@ namespace AvengersTheFallen
             panel1.Invalidate(true);
         }
 
-
         private void TimerGenerateObstacles_Tick(object sender, EventArgs e)
         {
-			if (map.Final == false)
-			{
-				map.AddObstacles();
-				map.AddEnemies();
-				panel1.Invalidate();
-			}
+            if (map.Final == false)
+            {
+                map.AddObstacles();
+                timerGenerateObstacles.Interval = timerMapMove.Interval * 216;
+                panel1.Invalidate();
+            }
+        }
+
+        private void TimerGenerateEnemies_Tick(object sender, EventArgs e)
+        {
+            if (map.Final == false)
+            {
+                map.AddEnemies();
+                panel1.Invalidate();
+            }
         }
 
         private void TimerMapMove_Tick(object sender, EventArgs e)
@@ -172,5 +181,5 @@ namespace AvengersTheFallen
 				boss.Move();
 			}
 		}
-	}
+    }
 }

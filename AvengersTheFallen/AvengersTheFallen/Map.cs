@@ -102,46 +102,69 @@ namespace AvengersTheFallen
 
         public void AddObstacles()
         {
-            //dodava tri random prepreki na mapata
-            int a = -1, b = -1, c = -1;
-            a = Form1.r.Next(0, width - 100);
-            obstacles.Add(new Obstacle(new Point(a, -100), level));
-            b = Form1.r.Next(0, width - 10);
-            while (b >= a - 100 && b <= a + 100)
+            //dodava random prepreki na mapata
+            int n = Form1.r.Next(1, 5);
+            List<Obstacle> new_obstacles = new List<Obstacle>();
+            for (int i = 0; i < n; i++)
             {
-                b = Form1.r.Next(0, width - 10);
+                bool t = true;
+                int k = Form1.r.Next(0, width - 100);
+                foreach (Obstacle j in new_obstacles)
+                {
+                    if (k <= j.Location.X + 100 && k >= j.Location.X - 100)
+                    {
+                        t = false;
+                        break;
+                    }
+                }
+                if (!t)
+                {
+                    i--;
+                }
+                else
+                {
+                    new_obstacles.Add(new Obstacle(new Point(k, -100), level));
+                }
             }
-            obstacles.Add(new Obstacle(new Point(b, -100), level));
-            c = Form1.r.Next(0, width - 10);
-            while ((c >= a - 100 && c <= a + 100) || (c >= b - 100 && c <= b + 100))
+            foreach (Obstacle j in new_obstacles)
             {
-                c = Form1.r.Next(0, width - 10);
+                obstacles.Add(j);
             }
-            obstacles.Add(new Obstacle(new Point(c, -100), level));
         }
-
 
         public void AddEnemies()
         {
-            //dodava tri random neprijateli na mapata
-            int a = -1, b = -1, c = -1;
-            a = Form1.r.Next(0, width - 100);
-            enemies.Add(new Enemy(new Point(a, -100), level));
-            b = Form1.r.Next(0, width - 100);
-            while (b >= a - 100 && b <= a + 100)
+            //dodava random neprijateli na mapata
+            int n = Form1.r.Next(1, 5);
+            List<Enemy> new_enemies = new List<Enemy>();
+            for (int i = 0; i < n; i++)
             {
-                b = Form1.r.Next(0, width - 100);
+                bool t = true;
+                int k = Form1.r.Next(0, width - 100);
+                foreach (Enemy j in new_enemies)
+                {
+                    if (k < j.Location.X + 100 && k > j.Location.X - 100)
+                    {
+                        t = false;
+                        break;
+                    }
+                }
+                if (!t)
+                {
+                    i--;
+                }
+                else
+                {
+                    new_enemies.Add(new Enemy(new Point(k, -100), level));
+                }
             }
-            enemies.Add(new Enemy(new Point(b, -100), level));
-            c = Form1.r.Next(0, width - 100);
-            while ((c >= a - 100 && c <= a + 100) || (c >= b - 100 && c <= b + 100))
+            foreach (Enemy j in new_enemies)
             {
-                c = Form1.r.Next(0, width - 100);
+                enemies.Add(j);
             }
-            enemies.Add(new Enemy(new Point(c, -100), level));
         }
 
-		public Boolean checkCollisionAvengerObstacle(Avenger avenger)
+        public Boolean checkCollisionAvengerObstacle(Avenger avenger)
 		{
 			//vraka true ako avengerot se sudri so nekoja prepreka
 			Point a = avenger.Location;

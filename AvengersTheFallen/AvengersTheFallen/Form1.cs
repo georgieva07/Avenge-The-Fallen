@@ -18,11 +18,13 @@ namespace AvengersTheFallen
         private Map map;
 		private Boss boss;
         public static Random r;
+		public string Prev;
         public enum PanelView
         {
             menu,
             level_select,
-            game
+            game,
+			game_over
         };
         public PanelView panelView;
 		public Form1()
@@ -116,7 +118,7 @@ namespace AvengersTheFallen
 					avenger.TakeDamage();
 				}
 
-				if (avenger.Damage == 3)
+				/*if (avenger.Damage == 3)
 				{
 					timerMapMove.Stop();
 					GameOver form = new GameOver();
@@ -128,6 +130,10 @@ namespace AvengersTheFallen
 					{
 						this.Close();
 					}
+				}*/
+				if (avenger.Damage == 3)
+				{
+					panelView = PanelView.game_over;
 				}
 
 				if(map.Progress == 20)
@@ -139,8 +145,26 @@ namespace AvengersTheFallen
 			else
 			{
 				avenger.MoveShots();
-				boss.Move(r.Next(15));
+				boss.Move(avenger);
+				if(r.Next(30) == 1)
+				{
+					boss.AddShot();
+				}
+				boss.MoveShots();
+				boss.checkCollisionWeaponBoss(avenger);
+				if (boss.checkCollisionAvengerBossWeapon(avenger))
+				{
+					avenger.TakeBossDamage();
+				}
+				if (avenger.BossDamage == 3)
+				{
+					panelView = PanelView.game_over;
+				}
 
+				if (boss.Damage == 10)
+				{
+					panelView = PanelView.level_select;
+				}
 			}
             panel1.Invalidate(true);
         }
@@ -244,7 +268,39 @@ namespace AvengersTheFallen
                 back.Click += new System.EventHandler(this.panel1BackButton);
                 panel1.Controls.Add(back);
             }
-        }
+			else if (panelView == PanelView.game_over)
+			{
+				Button start_over, quit;
+				Label label;
+				label = new Label();
+				label.Width = panel1.Width / 2;
+				label.Height = panel1.Height * 30 / 100;
+				label.Font = new Font(label.Font.FontFamily, label.Height / 4.5F);
+				label.Text = "GAME OVER";
+				label.Location = new Point(panel1.Width * 25 / 100, panel1.Height * 20 / 100);
+				panel1.Controls.Add(label);
+
+
+				start_over = new Button();
+				start_over.Width = panel1.Width / 10;
+				start_over.Height = panel1.Height / 10;
+				start_over.Font = new Font(start_over.Font.FontFamily, start_over.Height / 4.5F);
+				start_over.Text = "Start Over";
+				start_over.Location = new Point(panel1.Width*20/100, panel1.Height - panel1.Height*20/100);
+				start_over.Click += new System.EventHandler(this.panel1StartOverButton);
+				panel1.Controls.Add(start_over);
+
+				quit = new Button();
+				quit.Width = panel1.Width / 10;
+				quit.Height = panel1.Height / 10;
+				quit.Font = new Font(quit.Font.FontFamily, quit.Height / 4.5F);
+				quit.Text = "Quit";
+				quit.Location = new Point(panel1.Width - panel1.Width * 20 / 100, panel1.Height - panel1.Height * 20 / 100);
+				quit.Click += new System.EventHandler(this.panel1QuitButton);
+				panel1.Controls.Add(quit);
+
+			}
+		}
 
         private void panel1IronManButton(object sender, EventArgs e)
         {
@@ -258,7 +314,8 @@ namespace AvengersTheFallen
             timerGenerateObstacles.Enabled = true;
             timerGenerateEnemies.Enabled = true;
             avenger = new Avenger("IronMan", new Point(1000 / 2, 500 - 90));
-            boss = new Boss(new Point(1000 / 2, 0), r);
+			Prev = "IronMan";
+            boss = new Boss(new Point(1000 / 2, 0));
             map = new Map(500, 1000, avenger.Name);
         }
 
@@ -274,7 +331,8 @@ namespace AvengersTheFallen
             timerGenerateObstacles.Enabled = true;
             timerGenerateEnemies.Enabled = true;
 			avenger = new Avenger("CaptainAmerica", new Point(1000 / 2, 500 - 90));
-            boss = new Boss(new Point(1000 / 2, 0), r);
+			Prev = "CaptainAmerica";
+			boss = new Boss(new Point(1000 / 2, 0));
             map = new Map(500, 1000, avenger.Name);
         }
 
@@ -290,7 +348,8 @@ namespace AvengersTheFallen
             timerGenerateObstacles.Enabled = true;
             timerGenerateEnemies.Enabled = true;
             avenger = new Avenger("ScarletWitch", new Point(1000 / 2, 500 - 90));
-            boss = new Boss(new Point(1000 / 2, 0), r);
+			Prev = "ScarletWitch";
+			boss = new Boss(new Point(1000 / 2, 0));
             map = new Map(500, 1000, avenger.Name);
         }
 
@@ -306,7 +365,8 @@ namespace AvengersTheFallen
             timerGenerateObstacles.Enabled = true;
             timerGenerateEnemies.Enabled = true;
             avenger = new Avenger("DrStrange", new Point(1000 / 2, 500 - 90));
-            boss = new Boss(new Point(1000 / 2, 0), r);
+			Prev = "DrStrange";
+			boss = new Boss(new Point(1000 / 2, 0));
             map = new Map(500, 1000, avenger.Name);
         }
 
@@ -322,7 +382,8 @@ namespace AvengersTheFallen
             timerGenerateObstacles.Enabled = true;
             timerGenerateEnemies.Enabled = true;
             avenger = new Avenger("Thor", new Point(1000 / 2, 500 - 90));
-            boss = new Boss(new Point(1000 / 2, 0), r);
+			Prev = "Thor";
+			boss = new Boss(new Point(1000 / 2, 0));
             map = new Map(500, 1000, avenger.Name);
         }
 
@@ -338,7 +399,8 @@ namespace AvengersTheFallen
             timerGenerateObstacles.Enabled = true;
             timerGenerateEnemies.Enabled = true;
             avenger = new Avenger("Hulk", new Point(1000 / 2, 500 - 90));
-            boss = new Boss(new Point(1000 / 2, 0), r);
+			Prev = "Hulk";
+			boss = new Boss(new Point(1000 / 2, 0));
             map = new Map(500, 1000, avenger.Name);
         }
 
@@ -370,10 +432,27 @@ namespace AvengersTheFallen
             map.shoot();
         }
 
+		private void panel1StartOverButton(object sender, EventArgs e)
+		{
+			panel1.Controls.Clear();
+			panelView = PanelView.game;
+			timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
+			timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
+			timerEnemyShoot.Interval = timerMapMove.Interval * 27;
+			timerMapMove.Enabled = true;
+			timerEnemyShoot.Enabled = true;
+			timerGenerateObstacles.Enabled = true;
+			timerGenerateEnemies.Enabled = true;
+			avenger = new Avenger(Prev, new Point(1000 / 2, 500 - 90));
+			boss = new Boss(new Point(1000 / 2, 0));
+			map = new Map(500, 1000, avenger.Name);
+		}
+
 		public void Reset()
 		{
-			avenger = new Avenger("Hulk", new Point(1000 / 2, 500 - 90));
+			avenger = new Avenger(Prev, new Point(1000 / 2, 500 - 90));
 			map = new Map(500, 1000, avenger.Name);
+			boss = new Boss(new Point(1000 / 2, 0));
 			TimerGenerateObstacles_Tick(null, null);
 			timerMapMove.Start();
 		}

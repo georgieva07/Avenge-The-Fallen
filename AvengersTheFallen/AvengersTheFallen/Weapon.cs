@@ -43,6 +43,10 @@ namespace AvengersTheFallen
 			{
 				WeaponImage = Resources.strange;
 			}
+			else if (Owner == "Thanos")
+			{
+				WeaponImage = Resources.strange;
+			}
 			WeaponImage = new Bitmap(WeaponImage, new Size(30, 40));
 		}
 
@@ -75,6 +79,14 @@ namespace AvengersTheFallen
                 Location = new Point(Location.X, Location.Y + 10);
             }
         }
+
+		public void MoveBoss()
+		{
+			if (Location.Y + 10 <= 500)
+			{
+				Location = new Point(Location.X, Location.Y + 10);
+			}
+		}
 	}
 
 }

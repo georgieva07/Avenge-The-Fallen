@@ -16,6 +16,7 @@ namespace AvengersTheFallen
         public int width, height;
 		public List<Weapon> shots { get; set; }
 		public int Damage { get; set; }
+		public int BossDamage { get; set; }
 
 		public Avenger(string name, Point position)
 		{
@@ -24,6 +25,7 @@ namespace AvengersTheFallen
             width = 1000;
             height = 500;
 			Damage = 0;
+			BossDamage = 0;
 			shots = new List<Weapon>();
 			if (Name == "IronMan")
 			{
@@ -113,5 +115,10 @@ namespace AvengersTheFallen
 			Damage++;
 		}
 
-    }
+		public void TakeBossDamage()
+		{
+			BossDamage++;
+		}
+
+	}
 }

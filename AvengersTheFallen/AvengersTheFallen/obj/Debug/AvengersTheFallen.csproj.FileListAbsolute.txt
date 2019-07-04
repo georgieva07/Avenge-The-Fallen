@@ -28,7 +28,6 @@ C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\bin\Debug\
 C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.exe
 C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.pdb
 C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.Form1.resources
-D:\FINKI\4. Fourth semester\VP\Project\VP_Project\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.GameOver.resources
 C:\Users\Damjan\Desktop\VP PROEKT\AvengersTheFallen\AvengersTheFallen\obj\Debug\AvengersTheFallen.GameOver.resources
 C:\Users\Damjan\Desktop\vp proekt2\AvengersTheFallen\AvengersTheFallen\bin\Debug\AvengersTheFallen.exe.config
 C:\Users\Damjan\Desktop\vp proekt2\AvengersTheFallen\AvengersTheFallen\bin\Debug\AvengersTheFallen.exe

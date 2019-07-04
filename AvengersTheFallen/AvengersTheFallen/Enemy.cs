@@ -14,38 +14,28 @@ namespace AvengersTheFallen
         public Image image;
         string level;
         public List<Weapon> shots;
-        public Enemy(Point Location, string level)
+        public Image WeaponImage;
+        public Enemy(Point Location, string level, Image image)
         {
             this.level = level;
             this.Location = Location;
-            if(level == "Thor"|| level == "Hulk")
+            this.image = image;
+            shots = new List<Weapon>();
+            if (level == "Thor")
             {
-                image = new Bitmap(Resources.ThorEnemy, new Size(90, 90));
-                shots = new List<Weapon>();
+                WeaponImage = new Bitmap(Resources.ThorEnemyWeapon, new Size(40, 40));
+            }
+            if (level == "Hulk")
+            {
+                WeaponImage = new Bitmap(Resources.HulkEnemyWeapon, new Size(30, 41));
             }
         }
 
         public void shoot()
         {
-            Weapon g = new Weapon(level, new Point(Location.X + image.Width/2 - 20, Location.Y + image.Height));
-            g.WeaponImage = new Bitmap(Resources.ThorEnemyWeapon, new Size(40, 40));
+            Weapon g = new Weapon(level, new Point(Location.X + image.Width / 2 - 20, Location.Y + image.Height));
+            g.WeaponImage = WeaponImage;
             shots.Add(g);
-        }
-
-
-        public void MoveShots()
-        {
-            foreach (Weapon w in shots)
-            {
-                w.MoveEnemy();
-            }
-            for (int i = 0; i < shots.Count; i++)
-            {
-                if (shots[i].Location.Y == 0)
-                {
-                    shots.RemoveAt(i);
-                }
-            }
         }
 
         public void Draw(Graphics g)
@@ -55,11 +45,6 @@ namespace AvengersTheFallen
             {
                 w.Draw(g);
             }
-        }
-
-        public void Move()
-        {
-            Location = new Point(Location.X, Location.Y + 4);
         }
     }
 }

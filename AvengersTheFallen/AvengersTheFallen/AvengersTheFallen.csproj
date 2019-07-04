@@ -137,5 +137,14 @@
   <ItemGroup>
     <None Include="Resources\thanos.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hulk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HulkEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HulkEnemyWeapon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,9 +30,13 @@ namespace AvengersTheFallen
 		public Form1()
 		{
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             this.DoubleBuffered = true;
             r = new Random();
             panelView = PanelView.menu;
+            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
+            timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
+            timerEnemyShoot.Interval = timerMapMove.Interval * 54;
             this.Height = 500;
             this.Width = 1000;
             Form1_Resize(null, null);
@@ -132,8 +136,12 @@ namespace AvengersTheFallen
 					}
 				}*/
 				if (avenger.Damage == 3)
-				{
-					panelView = PanelView.game_over;
+                {
+                    timerMapMove.Enabled = false;
+                    timerEnemyShoot.Enabled = false;
+                    timerGenerateObstacles.Enabled = false;
+                    timerGenerateEnemies.Enabled = false;
+                    panelView = PanelView.game_over;
 				}
 
 				if(map.Progress == 20)
@@ -306,9 +314,6 @@ namespace AvengersTheFallen
         {
             panel1.Controls.Clear();
             panelView = PanelView.game;
-            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-            timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
-            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
             timerMapMove.Enabled = true;
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
@@ -323,9 +328,6 @@ namespace AvengersTheFallen
         {
             panel1.Controls.Clear();
             panelView = PanelView.game;
-            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-            timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
-            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
             timerMapMove.Enabled = true;
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
@@ -340,9 +342,6 @@ namespace AvengersTheFallen
         {
             panel1.Controls.Clear();
             panelView = PanelView.game;
-            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-            timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
-            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
             timerMapMove.Enabled = true;
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
@@ -357,9 +356,6 @@ namespace AvengersTheFallen
         {
             panel1.Controls.Clear();
             panelView = PanelView.game;
-            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-            timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
-            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
             timerMapMove.Enabled = true;
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
@@ -374,9 +370,6 @@ namespace AvengersTheFallen
         {
             panel1.Controls.Clear();
             panelView = PanelView.game;
-            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-            timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
-            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
             timerMapMove.Enabled = true;
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
@@ -391,9 +384,6 @@ namespace AvengersTheFallen
         {
             panel1.Controls.Clear();
             panelView = PanelView.game;
-            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-            timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
-            timerEnemyShoot.Interval = timerMapMove.Interval * 27;
             timerMapMove.Enabled = true;
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
@@ -436,10 +426,8 @@ namespace AvengersTheFallen
 		{
 			panel1.Controls.Clear();
 			panelView = PanelView.game;
-			timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
-			timerGenerateEnemies.Interval = timerMapMove.Interval * 216;
-			timerEnemyShoot.Interval = timerMapMove.Interval * 27;
-			timerMapMove.Enabled = true;
+            timerGenerateObstacles.Interval = timerMapMove.Interval * 108;
+            timerMapMove.Enabled = true;
 			timerEnemyShoot.Enabled = true;
 			timerGenerateObstacles.Enabled = true;
 			timerGenerateEnemies.Enabled = true;
@@ -447,15 +435,5 @@ namespace AvengersTheFallen
 			boss = new Boss(new Point(1000 / 2, 0));
 			map = new Map(500, 1000, avenger.Name);
 		}
-
-		public void Reset()
-		{
-			avenger = new Avenger(Prev, new Point(1000 / 2, 500 - 90));
-			map = new Map(500, 1000, avenger.Name);
-			boss = new Boss(new Point(1000 / 2, 0));
-			TimerGenerateObstacles_Tick(null, null);
-			timerMapMove.Start();
-		}
-
 	}
 }

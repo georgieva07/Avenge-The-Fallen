@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-<<<<<<< HEAD
 			this.components = new System.ComponentModel.Container();
 			this.timerGenerateObstacles = new System.Windows.Forms.Timer(this.components);
 			this.timerMapMove = new System.Windows.Forms.Timer(this.components);
@@ -77,12 +76,10 @@
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
 			this.Resize += new System.EventHandler(this.Form1_Resize);
 			this.ResumeLayout(false);
-=======
             this.components = new System.ComponentModel.Container();
             this.timerGenerateObstacles = new System.Windows.Forms.Timer(this.components);
             this.timerMapMove = new System.Windows.Forms.Timer(this.components);
             this.timerEnemyShoot = new System.Windows.Forms.Timer(this.components);
-            this.timerBossMove = new System.Windows.Forms.Timer(this.components);
             this.timerGenerateEnemies = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new AvengersTheFallen.DrawPanel();
             this.SuspendLayout();
@@ -100,12 +97,7 @@
             // timerEnemyShoot
             // 
             this.timerEnemyShoot.Tick += new System.EventHandler(this.TimerEnemyShoot_Tick);
-            // 
-            // timerBossMove
-            // 
-            this.timerBossMove.Interval = 750;
-            this.timerBossMove.Tick += new System.EventHandler(this.timerBossMove_Tick);
-            // 
+            //  
             // timerGenerateEnemies
             // 
             this.timerGenerateEnemies.Tick += new System.EventHandler(this.TimerGenerateEnemies_Tick);
@@ -134,7 +126,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
->>>>>>> c5e4a605f8a40af36abd596eb1e38d3d499f2870
 
 		}
 
@@ -147,4 +138,3 @@
         private System.Windows.Forms.Timer timerGenerateEnemies;
     }
 }
-

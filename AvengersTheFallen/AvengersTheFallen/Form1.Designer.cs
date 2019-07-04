@@ -33,8 +33,8 @@
             this.timerMapMove = new System.Windows.Forms.Timer(this.components);
             this.timerEnemyShoot = new System.Windows.Forms.Timer(this.components);
             this.timerBossMove = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new AvengersTheFallen.DrawPanel();
             this.timerGenerateEnemies = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new AvengersTheFallen.DrawPanel();
             this.SuspendLayout();
             // 
             // timerGenerateObstacles
@@ -53,9 +53,12 @@
             // 
             // timerBossMove
             // 
-            this.timerBossMove.Enabled = true;
             this.timerBossMove.Interval = 750;
             this.timerBossMove.Tick += new System.EventHandler(this.timerBossMove_Tick);
+            // 
+            // timerGenerateEnemies
+            // 
+            this.timerGenerateEnemies.Tick += new System.EventHandler(this.TimerGenerateEnemies_Tick);
             // 
             // panel1
             // 
@@ -66,10 +69,6 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
-            // timerGenerateEnemies
-            // 
-            this.timerGenerateEnemies.Tick += new System.EventHandler(this.TimerGenerateEnemies_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -77,7 +76,7 @@
             this.ClientSize = new System.Drawing.Size(1312, 567);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Avengers: The Fallen";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);

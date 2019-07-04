@@ -73,6 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1312, 567);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;

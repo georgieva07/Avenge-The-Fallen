@@ -34,6 +34,7 @@ namespace AvengersTheFallen
             this.Height = 500;
             this.Width = 1000;
             Form1_Resize(null, null);
+			KeyPreview = true;
         }
 
 		private void Form1_Resize(object sender, EventArgs e)
@@ -138,6 +139,7 @@ namespace AvengersTheFallen
 			else
 			{
 				avenger.MoveShots();
+				boss.Move(r.Next(15));
 
 			}
             panel1.Invalidate(true);
@@ -210,7 +212,6 @@ namespace AvengersTheFallen
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
             timerGenerateEnemies.Enabled = true;
-            timerBossMove.Enabled = false;
             avenger = new Avenger("Hulk", new Point(1000 / 2, 500 - 90));
             boss = new Boss(new Point(1000 / 2, 0), r);
             map = new Map(500, 1000, avenger.Name);
@@ -252,12 +253,5 @@ namespace AvengersTheFallen
 			timerMapMove.Start();
 		}
 
-		private void timerBossMove_Tick(object sender, EventArgs e)
-		{
-			if(boss.Final == true)
-			{
-				boss.Move();
-			}
-		}
-    }
+	}
 }

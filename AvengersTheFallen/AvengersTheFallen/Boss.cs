@@ -18,7 +18,7 @@ namespace AvengersTheFallen
 		public int Damage { get; set; }
 		public bool Final = false;
 		private Random random;
-		private int Movements = 1;
+		private int Step = 5;
 
 		public Boss(Point position, Random r)
 		{
@@ -43,29 +43,18 @@ namespace AvengersTheFallen
 			}
 		}
 
-		public void Move()
+		public void Move(int change)
 		{
-			int step = 1;
+			if (change == 1)
+			{
+				Step *= -1;
+			}
 			
-			if (Location.Y + step >= 0)
+			if (Location.X + Step >= 0 && Location.X + Step <= width - Character.Width)
 			{
-				Location = new Point(Location.X, Location.Y-10);
-				if (Location.Y == 0)
-				{
-					step *= -1;
-				}
-
+				Location = new Point(Location.X + Step, Location.Y);
 			}
 
-			else if (Location.Y + step <= step*20 + Character.Height)
-			{
-				Location = new Point(Location.X, Location.Y + 10);
-				if(Location.Y == Character.Height + 20 * step)
-				{
-					step *= -1;
-				}
-	
-			}
 
 		}
 

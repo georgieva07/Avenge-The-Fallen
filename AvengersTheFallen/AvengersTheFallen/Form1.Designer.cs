@@ -76,12 +76,6 @@
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
 			this.Resize += new System.EventHandler(this.Form1_Resize);
 			this.ResumeLayout(false);
-            this.components = new System.ComponentModel.Container();
-            this.timerGenerateObstacles = new System.Windows.Forms.Timer(this.components);
-            this.timerMapMove = new System.Windows.Forms.Timer(this.components);
-            this.timerEnemyShoot = new System.Windows.Forms.Timer(this.components);
-            this.timerGenerateEnemies = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new AvengersTheFallen.DrawPanel();
             this.SuspendLayout();
             // 
             // timerGenerateObstacles

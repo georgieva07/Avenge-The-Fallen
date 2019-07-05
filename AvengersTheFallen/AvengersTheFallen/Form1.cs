@@ -328,14 +328,8 @@ namespace AvengersTheFallen
 			else if (panelView == PanelView.game_over)
             {
                 e.Graphics.DrawImage(backgroundImage, new Point(0, 0));
+                e.Graphics.DrawImage(new Bitmap(Resources.GameOver, new Size(362,124)), new Point(319, 188));
                 Button start_over, quit;
-				Label label;
-				label = new Label();
-				label.Font = new Font(label.Font.FontFamily, label.Height / 3);
-				label.Text = "GAME OVER";
-				label.Location = new Point(panel1.Width * 25 / 100, panel1.Height * 20 / 100);
-				panel1.Controls.Add(label);
-
 
 				start_over = new Button();
                 start_over.FlatStyle = FlatStyle.Popup;

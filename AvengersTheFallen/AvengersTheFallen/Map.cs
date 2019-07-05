@@ -32,7 +32,7 @@ namespace AvengersTheFallen
 			this.r = r;
             if (level == "Thor")
             {
-                enemyImage = new Bitmap(Resources.ThorEnemy, new Size(50, 90));
+                enemyImage = new Bitmap(Resources.ThorEnemy, new Size(46, 74));
                 backgroundImage = new Bitmap(Resources.ThorBackground, new Size(1000, 500));
             }
             else if (level == "Hulk")
@@ -137,7 +137,7 @@ namespace AvengersTheFallen
         public void AddObstacles()
         {
             //dodava random prepreki na mapata
-            int n = Form1.r.Next(4, 8);
+            int n = Form1.r.Next(3, 6);
             List<Obstacle> new_obstacles = new List<Obstacle>();
             for (int i = 0; i < n; i++)
             {
@@ -181,7 +181,7 @@ namespace AvengersTheFallen
         public void AddEnemies()
         {
             //dodava random neprijateli na mapata
-            int n = Form1.r.Next(4, 8);
+            int n = Form1.r.Next(3, 6);
             List<Enemy> new_enemies = new List<Enemy>();
             for (int i = 0; i < n; i++)
             {

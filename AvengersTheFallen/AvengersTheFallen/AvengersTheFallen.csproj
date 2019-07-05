@@ -230,5 +230,8 @@
   <ItemGroup>
     <None Include="Resources\IronManBackground.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

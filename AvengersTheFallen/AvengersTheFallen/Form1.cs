@@ -19,6 +19,8 @@ namespace AvengersTheFallen
 		private Boss boss;
         public static Random r;
 		public string Prev;
+        public Image backgroundImage;
+        public bool[] won;
         public enum PanelView
         {
             menu,
@@ -30,6 +32,7 @@ namespace AvengersTheFallen
 		public Form1()
 		{
             InitializeComponent();
+            won = new bool[7];                ;
             WindowState = FormWindowState.Maximized;
             this.DoubleBuffered = true;
             r = new Random();
@@ -40,6 +43,7 @@ namespace AvengersTheFallen
             this.Width = 1000;
             Form1_Resize(null, null);
 			KeyPreview = true;
+            backgroundImage = new Bitmap(Resources.menuBackground, new Size(1000, 500));
         }
 
 		private void Form1_Resize(object sender, EventArgs e)
@@ -76,13 +80,17 @@ namespace AvengersTheFallen
 			{
 				avenger.Move("Right");
 			}
-			if(e.KeyData == Keys.Space)
-			{
-				avenger.AddShot();
-				if (avenger.Name == "Hulk")
+            panel1.Invalidate(true);
+        }
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Space)
+            {
+                avenger.AddShot();
+                if (avenger.Name == "Hulk")
                     avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
-				   	
-			}
+
+            }
             panel1.Invalidate(true);
         }
 
@@ -157,7 +165,31 @@ namespace AvengersTheFallen
 				if (boss.Damage == 10)
 				{
 					panelView = PanelView.level_select;
-				}
+                    if(avenger.Name == "Hulk")
+                    {
+                        won[1] = true;
+                    }
+                    if (avenger.Name == "Thor")
+                    {
+                        won[2] = true;
+                    }
+                    if (avenger.Name == "DrStrange")
+                    {
+                        won[3] = true;
+                    }
+                    if (avenger.Name == "ScarletWitch")
+                    {
+                        won[4] = true;
+                    }
+                    if (avenger.Name == "CaptainAmerica")
+                    {
+                        won[5] = true;
+                    }
+                    if (avenger.Name == "IronMan")
+                    {
+                        won[6] = true;
+                    }
+                }
 			}
             panel1.Invalidate(true);
         }
@@ -177,7 +209,10 @@ namespace AvengersTheFallen
             else if(panelView == PanelView.menu)
             {
                 Button play, quit;
+                e.Graphics.DrawImage(backgroundImage, new Point(0, 0));
                 play = new Button();
+                play.FlatStyle = FlatStyle.Popup;
+                play.BackColor = Color.FromArgb(100, Color.White);
                 play.Width = panel1.Width / 10;
                 play.Height = panel1.Height / 10;
                 play.Font = new Font(play.Font.FontFamily, play.Height / 3);
@@ -187,6 +222,8 @@ namespace AvengersTheFallen
                 panel1.Controls.Add(play);
 
                 quit = new Button();
+                quit.FlatStyle = FlatStyle.Popup;
+                quit.BackColor = Color.FromArgb(100, Color.White);
                 quit.Width = panel1.Width / 10;
                 quit.Height = panel1.Height / 10;
                 quit.Font = new Font(quit.Font.FontFamily, quit.Height / 3);
@@ -198,7 +235,12 @@ namespace AvengersTheFallen
             else if (panelView == PanelView.level_select)
             {
                 Button hulk, thor, strange, scarlet_witch, captain_america, iron_man, back;
+                e.Graphics.DrawImage(backgroundImage, new Point(0, 0));
                 hulk = new Button();
+                hulk.FlatStyle = FlatStyle.Popup;
+                hulk.BackColor = Color.FromArgb(100, Color.White);
+                if(won[1])
+                    hulk.BackColor = Color.FromArgb(100, Color.Green);
                 hulk.Width = panel1.Width / 10;
                 hulk.Height = panel1.Height / 10;
                 hulk.Font = new Font(hulk.Font.FontFamily, hulk.Height / 3);
@@ -208,6 +250,10 @@ namespace AvengersTheFallen
                 panel1.Controls.Add(hulk);
 
                 thor = new Button();
+                thor.FlatStyle = FlatStyle.Popup;
+                thor.BackColor = Color.FromArgb(100, Color.White);
+                if (won[2])
+                    thor.BackColor = Color.FromArgb(100, Color.Green);
                 thor.Width = panel1.Width / 10;
                 thor.Height = panel1.Height / 10;
                 thor.Font = new Font(thor.Font.FontFamily, thor.Height / 3);
@@ -217,6 +263,10 @@ namespace AvengersTheFallen
                 panel1.Controls.Add(thor);
 
                 strange = new Button();
+                strange.FlatStyle = FlatStyle.Popup;
+                strange.BackColor = Color.FromArgb(100, Color.White);
+                if (won[3])
+                    strange.BackColor = Color.FromArgb(100, Color.Green);
                 strange.Width = panel1.Width / 10;
                 strange.Height = panel1.Height / 10;
                 strange.Font = new Font(strange.Font.FontFamily, strange.Height / 3);
@@ -226,6 +276,10 @@ namespace AvengersTheFallen
                 panel1.Controls.Add(strange);
 
                 scarlet_witch = new Button();
+                scarlet_witch.FlatStyle = FlatStyle.Popup;
+                scarlet_witch.BackColor = Color.FromArgb(100, Color.White);
+                if (won[4])
+                    scarlet_witch.BackColor = Color.FromArgb(100, Color.Green);
                 scarlet_witch.Width = panel1.Width / 10;
                 scarlet_witch.Height = panel1.Height / 10;
                 scarlet_witch.Font = new Font(scarlet_witch.Font.FontFamily, scarlet_witch.Height / 3);
@@ -235,6 +289,10 @@ namespace AvengersTheFallen
                 panel1.Controls.Add(scarlet_witch);
 
                 captain_america = new Button();
+                captain_america.FlatStyle = FlatStyle.Popup;
+                captain_america.BackColor = Color.FromArgb(100, Color.White);
+                if (won[5])
+                    captain_america.BackColor = Color.FromArgb(100, Color.Green);
                 captain_america.Width = panel1.Width / 10;
                 captain_america.Height = panel1.Height / 10;
                 captain_america.Font = new Font(captain_america.Font.FontFamily, captain_america.Height / 4.5F);
@@ -244,6 +302,10 @@ namespace AvengersTheFallen
                 panel1.Controls.Add(captain_america);
 
                 iron_man = new Button();
+                iron_man.FlatStyle = FlatStyle.Popup;
+                iron_man.BackColor = Color.FromArgb(100, Color.White);
+                if (won[6])
+                    iron_man.BackColor = Color.FromArgb(100, Color.Green);
                 iron_man.Width = panel1.Width / 10;
                 iron_man.Height = panel1.Height / 10;
                 iron_man.Font = new Font(iron_man.Font.FontFamily, iron_man.Height / 4.5F);
@@ -253,6 +315,8 @@ namespace AvengersTheFallen
                 panel1.Controls.Add(iron_man);
 
                 back = new Button();
+                back.FlatStyle = FlatStyle.Popup;
+                back.BackColor = Color.FromArgb(100, Color.White);
                 back.Width = panel1.Width / 10;
                 back.Height = panel1.Height / 10;
                 back.Font = new Font(back.Font.FontFamily, back.Height / 3);
@@ -262,8 +326,9 @@ namespace AvengersTheFallen
                 panel1.Controls.Add(back);
             }
 			else if (panelView == PanelView.game_over)
-			{
-				Button start_over, quit;
+            {
+                e.Graphics.DrawImage(backgroundImage, new Point(0, 0));
+                Button start_over, quit;
 				Label label;
 				label = new Label();
 				label.Font = new Font(label.Font.FontFamily, label.Height / 3);
@@ -273,7 +338,9 @@ namespace AvengersTheFallen
 
 
 				start_over = new Button();
-				start_over.Width = panel1.Width / 10;
+                start_over.FlatStyle = FlatStyle.Popup;
+                start_over.BackColor = Color.FromArgb(100, Color.White);
+                start_over.Width = panel1.Width / 10;
 				start_over.Height = panel1.Height / 10;
 				start_over.Font = new Font(start_over.Font.FontFamily, start_over.Height / 4.5F);
 				start_over.Text = "Start Over";
@@ -282,7 +349,9 @@ namespace AvengersTheFallen
 				panel1.Controls.Add(start_over);
 
 				quit = new Button();
-				quit.Width = panel1.Width / 10;
+                quit.FlatStyle = FlatStyle.Popup;
+                quit.BackColor = Color.FromArgb(100, Color.White);
+                quit.Width = panel1.Width / 10;
 				quit.Height = panel1.Height / 10;
 				quit.Font = new Font(quit.Font.FontFamily, quit.Height / 4.5F);
 				quit.Text = "Quit";
@@ -413,5 +482,5 @@ namespace AvengersTheFallen
 			boss = new Boss(new Point(1000 / 2, 0));
 			map = new Map(500, 1000, avenger.Name, r);
 		}
-	}
+    }
 }

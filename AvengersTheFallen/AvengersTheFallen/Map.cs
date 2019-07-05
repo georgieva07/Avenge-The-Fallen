@@ -43,7 +43,22 @@ namespace AvengersTheFallen
                 enemyImage = new Bitmap(Resources.IronManEnemy, new Size(46, 74));
                 backgroundImage = new Bitmap(Resources.IronManBackground, new Size(1000, 500));
             }
-        }
+			else if (level == "ScarletWitch")
+			{
+				enemyImage = new Bitmap(Resources.IronManEnemy, new Size(46, 74));
+				backgroundImage = new Bitmap(Resources.IronManBackground, new Size(1000, 500));
+			}
+			else if (level == "CaptainAmerica")
+			{
+				enemyImage = new Bitmap(Resources.IronManEnemy, new Size(46, 74));
+				backgroundImage = new Bitmap(Resources.IronManBackground, new Size(1000, 500));
+			}
+			else if (level == "DrStrange")
+			{
+				enemyImage = new Bitmap(Resources.IronManEnemy, new Size(46, 74));
+				backgroundImage = new Bitmap(Resources.IronManBackground, new Size(1000, 500));
+			}
+		}
 
         public void Draw(Graphics g)
         {
@@ -120,7 +135,7 @@ namespace AvengersTheFallen
         public void AddObstacles()
         {
             //dodava random prepreki na mapata
-            int n = Form1.r.Next(1, 4);
+            int n = Form1.r.Next(1, 6);
             List<Obstacle> new_obstacles = new List<Obstacle>();
             for (int i = 0; i < n; i++)
             {

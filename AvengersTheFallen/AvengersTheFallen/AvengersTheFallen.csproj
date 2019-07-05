@@ -90,9 +90,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\captainamerica.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\drstrange.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -106,18 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mjolnir.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\scarletwitch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shield.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\strange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\thor.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bus.png" />
@@ -138,15 +123,6 @@
     <None Include="Resources\HulkEnemyWeapon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IronManBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hulk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HulkBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\IronManEnemy.png" />
   </ItemGroup>
   <ItemGroup>
@@ -162,9 +138,6 @@
     <None Include="Resources\IronManEnemyWeapon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ThorBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ThorEnemy.png" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +148,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ThorObstacle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\captainamerica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scarletwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drstrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThorBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HulkBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hulk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronManBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ironman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iman.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

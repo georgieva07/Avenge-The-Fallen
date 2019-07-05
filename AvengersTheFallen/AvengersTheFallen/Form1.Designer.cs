@@ -48,7 +48,7 @@
 			// 
 			// timerEnemyShoot
 			// 
-			this.timerEnemyShoot.Interval = 200;
+			this.timerEnemyShoot.Interval = 1500;
 			this.timerEnemyShoot.Tick += new System.EventHandler(this.TimerEnemyShoot_Tick);
 			// 
 			// timerGenerateEnemies

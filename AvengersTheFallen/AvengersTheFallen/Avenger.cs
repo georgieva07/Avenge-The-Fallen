@@ -21,26 +21,25 @@ namespace AvengersTheFallen
         public Avenger(string name, Point position)
         {
             Name = name;
-            Location = position;
             width = 1000;
             height = 500;
-            Damage = 0;
+			Location = position;
+			Damage = 0;
             BossDamage = 0;
             shots = new List<Weapon>();
             if (Name == "IronMan")
             {
                 Character = Resources.ironman;
-            }
+			}
             else if (Name == "Thor")
             {
                 Character = Resources.thor;
-                Character = new Bitmap(Character, new Size(40, 90));
-            }
+			}
             else if (Name == "Hulk")
             {
-                Character = Resources.hulk;
-                Character = new Bitmap(Character, new Size(30, 60));
-            }
+				Character = Resources.hulk;
+				
+			}
             else if (Name == "ScarletWitch")
             {
                 Character = Resources.scarletwitch;
@@ -53,7 +52,8 @@ namespace AvengersTheFallen
             {
                 Character = Resources.drstrange;
             }
-        }
+			Character = new Bitmap(Character, new Size(50, 100));
+		}
 
         public void Draw(Graphics g)
         {

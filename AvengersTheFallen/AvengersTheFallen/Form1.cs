@@ -79,10 +79,10 @@ namespace AvengersTheFallen
 			}
 			if(e.KeyData == Keys.Space)
 			{
-                //if (avenger.Name == "Hulk")
-                    //avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
-                //else
-				    avenger.AddShot();	
+				avenger.AddShot();
+				if (avenger.Name == "Hulk")
+                    avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
+				   	
 			}
             panel1.Invalidate(true);
         }
@@ -121,20 +121,7 @@ namespace AvengersTheFallen
 				{
 					avenger.TakeDamage();
 				}
-
-				/*if (avenger.Damage == 3)
-				{
-					timerMapMove.Stop();
-					GameOver form = new GameOver();
-					if (form.ShowDialog() == DialogResult.OK)
-					{
-						Reset();
-					}
-					else
-					{
-						this.Close();
-					}
-				}*/
+	
 				if (avenger.Damage == 3)
                 {
                     timerMapMove.Enabled = false;
@@ -154,7 +141,7 @@ namespace AvengersTheFallen
 			{
 				avenger.MoveShots();
 				boss.Move(avenger);
-				if(r.Next(30) == 1)
+				if(r.Next(20) == 1)
 				{
 					boss.AddShot();
 				}
@@ -281,9 +268,7 @@ namespace AvengersTheFallen
 				Button start_over, quit;
 				Label label;
 				label = new Label();
-				label.Width = panel1.Width / 2;
-				label.Height = panel1.Height * 30 / 100;
-				label.Font = new Font(label.Font.FontFamily, label.Height / 4.5F);
+				label.Font = new Font(label.Font.FontFamily, label.Height / 3);
 				label.Text = "GAME OVER";
 				label.Location = new Point(panel1.Width * 25 / 100, panel1.Height * 20 / 100);
 				panel1.Controls.Add(label);
@@ -318,7 +303,7 @@ namespace AvengersTheFallen
             timerEnemyShoot.Enabled = true;
             timerGenerateObstacles.Enabled = true;
             timerGenerateEnemies.Enabled = true;
-            avenger = new Avenger("IronMan", new Point(1000 / 2, 500 - 90));
+            avenger = new Avenger("IronMan", new Point(1000 / 2, 500-100));
 			Prev = "IronMan";
             boss = new Boss(new Point(1000 / 2, 0));
             map = new Map(500, 1000, avenger.Name);

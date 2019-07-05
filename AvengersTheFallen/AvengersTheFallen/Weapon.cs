@@ -19,31 +19,43 @@ namespace AvengersTheFallen
             Owner = owner;
             Location = location;
 
-            if (Owner == "IronMan")
-            {
-                WeaponImage = Resources.strange;
-            }
-            else if (Owner == "Thor")
-            {
-                WeaponImage = Resources.mjolnir;
-            }
-            else if (Owner == "Hulk")
-            {
-                WeaponImage = Resources.strange;
-            }
-            else if (Owner == "ScarletWitch")
-            {
-                WeaponImage = Resources.strange;
-            }
-            else if (Owner == "CaptainAmerica")
-            {
-                WeaponImage = Resources.strange;
-            }
-            else if (Owner == "DrStrange")
-            {
-                WeaponImage = Resources.strange;
-            }
-            WeaponImage = new Bitmap(WeaponImage, new Size(30, 40));
+			if (Owner == "IronMan")
+			{
+				WeaponImage = Resources.iman;
+				WeaponImage = new Bitmap(WeaponImage, new Size(15, 50));
+			}
+			else if (Owner == "Thor")
+			{
+				WeaponImage = Resources.mjolnir;
+				WeaponImage = new Bitmap(WeaponImage, new Size(20, 30));
+			}
+			else if (Owner == "Hulk")
+			{
+				WeaponImage = Resources.fist;
+				WeaponImage = new Bitmap(WeaponImage, new Size(20, 30));
+			}
+			else if (Owner == "ScarletWitch")
+			{
+				WeaponImage = Resources.red;
+				WeaponImage = new Bitmap(WeaponImage, new Size(20, 30));
+			}
+			else if (Owner == "CaptainAmerica")
+			{
+				WeaponImage = Resources.shield;
+				WeaponImage = new Bitmap(WeaponImage, new Size(20, 30));
+			}
+			else if (Owner == "DrStrange")
+			{
+				WeaponImage = Resources.strange;
+				WeaponImage = new Bitmap(WeaponImage, new Size(20, 30));
+			}
+			else if (Owner == "Thanos")
+			{
+				WeaponImage = Resources.strange;
+				WeaponImage = new Bitmap(WeaponImage, new Size(20, 30));
+			}
+			
+		
         }
 
         public Weapon(string owner, Point location, Obstacle o)

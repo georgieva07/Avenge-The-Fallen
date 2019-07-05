@@ -121,20 +121,8 @@
   <data name="bus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="captainamerica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\captainamerica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="car" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="drstrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\drstrange.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iman" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iman.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ironman" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ironman.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mjolnir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mjolnir.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,23 +130,8 @@
   <data name="motorcycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\motorcycle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scarletwitch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\scarletwitch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shield.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="strange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\strange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="thor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="thanos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thanos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hulk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hulk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HulkEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HulkEnemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,12 +145,6 @@
   <data name="floating_cartoon_iceberg_set_isolated_from_vector_21651307" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\floating-cartoon-iceberg-set-isolated-from-vector-21651307.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HulkBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HulkBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IronManBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IronManBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="IronManEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IronManEnemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,9 +157,6 @@
   <data name="IronManObstacle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IronManObstacle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ThorBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ThorBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ThorEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ThorEnemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -204,5 +168,47 @@
   </data>
   <data name="ThorObstacle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ThorObstacle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="captainamerica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\captainamerica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drstrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drstrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hulk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hulk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HulkBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HulkBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ironman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ironman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IronManBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IronManBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scarletwitch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scarletwitch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="strange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\strange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThorBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ThorBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

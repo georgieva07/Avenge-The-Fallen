@@ -39,7 +39,7 @@ namespace AvengersTheFallen
             else if (Name == "Hulk")
             {
                 Character = Resources.hulk;
-                Character = new Bitmap(Character, new Size(43, 48));
+                Character = new Bitmap(Character, new Size(30, 60));
             }
             else if (Name == "ScarletWitch")
             {
@@ -58,8 +58,6 @@ namespace AvengersTheFallen
         public void Draw(Graphics g)
         {
             g.DrawImage(Character, new Point(Location.X, Location.Y));
-            g.DrawRectangle(new Pen(Color.Red), Location.X, Location.Y, Character.Width, Character.Height);
-
             foreach (Weapon w in shots)
             {
                 w.Draw(g);

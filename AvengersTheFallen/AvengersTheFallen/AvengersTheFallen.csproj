@@ -129,22 +129,52 @@
     <None Include="Resources\motorcycle.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ThorEnemy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ThorEnemyWeapon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\thanos.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hulk.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HulkEnemy.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HulkEnemyWeapon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronManBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hulk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HulkBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronManEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronManEnemyWeapon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronManObstacle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronManObstacle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronManEnemyWeapon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThorBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThorEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThorEnemyWeapon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThorObstacle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThorObstacle2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

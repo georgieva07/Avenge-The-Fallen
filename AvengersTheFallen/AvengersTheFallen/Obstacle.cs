@@ -13,7 +13,7 @@ namespace AvengersTheFallen
         public Point Location { get; set; }
         public Image image;
         string level;
-        enum Thor
+        enum Hulk
         {
             car,
             bus,
@@ -23,16 +23,40 @@ namespace AvengersTheFallen
         {
             Location = p;
             this.level = level;
-            if (level == "Hulk" || level == "Thor")
+            if (level == "Hulk")
             {
-                int k = Form1.r.Next(0, Enum.GetNames(typeof(Thor)).Length);
-                Thor e = (Thor)k;
-                if (Thor.car == e)
+                int k = Form1.r.Next(0, Enum.GetNames(typeof(Hulk)).Length);
+                Hulk e = (Hulk)k;
+                if (Hulk.car == e)
                     image = new Bitmap(Resources.car, new Size(50, 100));
-                if (Thor.bus == e)
+                if (Hulk.bus == e)
                     image = new Bitmap(Resources.bus, new Size(50, 150));
-                if (Thor.motorcycle == e)
+                if (Hulk.motorcycle == e)
                     image = new Bitmap(Resources.motorcycle, new Size(30, 60));
+            }
+            if (level == "IronMan")
+            {
+                int k = Form1.r.Next(1, 3);
+                if(k == 1)
+                {
+                    image = new Bitmap(Resources.IronManObstacle1, new Size(56, 46));
+                }
+                else
+                {
+                    image = new Bitmap(Resources.IronManObstacle2, new Size(82, 94));
+                }
+            }
+            if (level == "Thor")
+            {
+                int k = Form1.r.Next(1, 3);
+                if (k == 1)
+                {
+                    image = new Bitmap(Resources.ThorObstacle1, new Size(113, 45));
+                }
+                else
+                {
+                    image = new Bitmap(Resources.ThorObstacle2, new Size(40, 123));
+                }
             }
         }
 

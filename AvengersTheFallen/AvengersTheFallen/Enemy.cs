@@ -23,11 +23,15 @@ namespace AvengersTheFallen
             shots = new List<Weapon>();
             if (level == "Thor")
             {
-                WeaponImage = new Bitmap(Resources.ThorEnemyWeapon, new Size(40, 40));
+                WeaponImage = new Bitmap(Resources.ThorEnemyWeapon, new Size(30, 50));
             }
             if (level == "Hulk")
             {
                 WeaponImage = new Bitmap(Resources.HulkEnemyWeapon, new Size(30, 41));
+            }
+            if (level == "IronMan")
+            {
+                WeaponImage = new Bitmap(Resources.IronManEnemyWeapon, new Size(30, 41));
             }
         }
 

@@ -27,7 +27,7 @@ namespace AvengersTheFallen
 			Damage = 0;
 			shots = new List<Weapon>();
 			Character = Resources.thanos;
-			Character = new Bitmap(Character, new Size(90, 200));
+			Character = new Bitmap(Character, new Size(90, 150));
 		}
 
 		public void Draw(Graphics g)

@@ -183,11 +183,11 @@ namespace AvengersTheFallen
 			e.Graphics.ScaleTransform((float)(panel1.Width / 1000.0F), ((float)(panel1.Height) / 500.0F));
             if (panelView == PanelView.game)
             {
-                avenger.Draw(e.Graphics);
                 if (map.Final == false)
                     map.Draw(e.Graphics);
                 if (boss.Final)
                     boss.Draw(e.Graphics);
+                avenger.Draw(e.Graphics);
             }
             else if(panelView == PanelView.menu)
             {
@@ -392,6 +392,8 @@ namespace AvengersTheFallen
 			Prev = "Hulk";
 			boss = new Boss(new Point(1000 / 2, 0));
             map = new Map(500, 1000, avenger.Name);
+            //map.Final = true;
+            //boss.Final = true;
         }
 
         private void panel1BackButton(object sender, EventArgs e)

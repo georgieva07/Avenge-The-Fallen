@@ -30,18 +30,25 @@ namespace AvengersTheFallen
             Progress = 0;
             if (level == "Thor")
             {
-                enemyImage = new Bitmap(Resources.ThorEnemy, new Size(90, 90));
+                enemyImage = new Bitmap(Resources.ThorEnemy, new Size(50, 90));
+                backgroundImage = new Bitmap(Resources.ThorBackground, new Size(1000, 500));
             }
             else if (level == "Hulk")
             {
                 enemyImage = new Bitmap(Resources.HulkEnemy, new Size(46, 74));
+                backgroundImage = new Bitmap(Resources.HulkBackground, new Size(1000, 500));
+            }
+            else if (level == "IronMan")
+            {
+                enemyImage = new Bitmap(Resources.IronManEnemy, new Size(46, 74));
+                backgroundImage = new Bitmap(Resources.IronManBackground, new Size(1000, 500));
             }
         }
 
         public void Draw(Graphics g)
         {
             //ja iscrtuva mapata i preprekite na nea
-            //g.DrawImage(backgroundImage, p);
+            g.DrawImage(backgroundImage, new Point(0,0));
             if (Final == false)
             {
                 for (int i = 0; i < obstacles.Count; i++)

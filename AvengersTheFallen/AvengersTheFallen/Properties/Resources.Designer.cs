@@ -63,6 +63,16 @@ namespace AvengersTheFallen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap asdasd {
+            get {
+                object obj = ResourceManager.GetObject("asdasd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bus {
             get {
                 object obj = ResourceManager.GetObject("bus", resourceCulture);
@@ -103,6 +113,16 @@ namespace AvengersTheFallen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap floating_cartoon_iceberg_set_isolated_from_vector_21651307 {
+            get {
+                object obj = ResourceManager.GetObject("floating_cartoon_iceberg_set_isolated_from_vector_21651307", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hulk {
             get {
                 object obj = ResourceManager.GetObject("hulk", resourceCulture);
@@ -113,9 +133,9 @@ namespace AvengersTheFallen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hulk1 {
+        internal static System.Drawing.Bitmap HulkBackground {
             get {
-                object obj = ResourceManager.GetObject("hulk1", resourceCulture);
+                object obj = ResourceManager.GetObject("HulkBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +176,56 @@ namespace AvengersTheFallen.Properties {
         internal static System.Drawing.Bitmap ironman {
             get {
                 object obj = ResourceManager.GetObject("ironman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IronManBackground {
+            get {
+                object obj = ResourceManager.GetObject("IronManBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IronManEnemy {
+            get {
+                object obj = ResourceManager.GetObject("IronManEnemy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IronManEnemyWeapon {
+            get {
+                object obj = ResourceManager.GetObject("IronManEnemyWeapon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IronManObstacle1 {
+            get {
+                object obj = ResourceManager.GetObject("IronManObstacle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IronManObstacle2 {
+            get {
+                object obj = ResourceManager.GetObject("IronManObstacle2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +303,16 @@ namespace AvengersTheFallen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ThorBackground {
+            get {
+                object obj = ResourceManager.GetObject("ThorBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ThorEnemy {
             get {
                 object obj = ResourceManager.GetObject("ThorEnemy", resourceCulture);
@@ -246,6 +326,26 @@ namespace AvengersTheFallen.Properties {
         internal static System.Drawing.Bitmap ThorEnemyWeapon {
             get {
                 object obj = ResourceManager.GetObject("ThorEnemyWeapon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ThorObstacle1 {
+            get {
+                object obj = ResourceManager.GetObject("ThorObstacle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ThorObstacle2 {
+            get {
+                object obj = ResourceManager.GetObject("ThorObstacle2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

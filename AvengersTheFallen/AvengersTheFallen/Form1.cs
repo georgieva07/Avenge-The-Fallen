@@ -32,8 +32,10 @@ namespace AvengersTheFallen
 		public Form1()
 		{
             InitializeComponent();
-            won = new bool[7];                ;
-            WindowState = FormWindowState.Maximized;
+			FormBorderStyle = FormBorderStyle.None;
+			WindowState = FormWindowState.Maximized;
+			TopMost = true;
+            won = new bool[7];
             this.DoubleBuffered = true;
             r = new Random();
             panelView = PanelView.menu;

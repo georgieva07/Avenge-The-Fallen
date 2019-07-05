@@ -135,7 +135,7 @@ namespace AvengersTheFallen
                     panelView = PanelView.game_over;
 				}
 
-				if(map.Progress == 40)
+				if(map.Progress == 20)
 				{
 					map.Final = true;
 					boss.Final = true;

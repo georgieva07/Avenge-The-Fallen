@@ -76,12 +76,6 @@ namespace AvengersTheFallen
                 {
                     enemies[i].Draw(g);
                 }
-				if(Progress >= 20)
-				{
-					g.Clear(Color.Black);
-					g.DrawImage(new Bitmap(Resources.bossNext, new Size(1000, 500)), new Point(0,0));
-					Progress++;
-				}
             }
 
         }

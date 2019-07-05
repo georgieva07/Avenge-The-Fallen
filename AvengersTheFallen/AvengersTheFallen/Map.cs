@@ -19,8 +19,9 @@ namespace AvengersTheFallen
         public bool Final = false;
         public Image enemyImage;
         public int Progress { get; set; }
+		private Random r;
 
-        public Map(int h, int w, String l)
+        public Map(int h, int w, String l, Random r)
         {
             height = h;
             width = w;
@@ -28,6 +29,7 @@ namespace AvengersTheFallen
             enemies = new List<Enemy>();
             level = l;
             Progress = 0;
+			this.r = r;
             if (level == "Thor")
             {
                 enemyImage = new Bitmap(Resources.ThorEnemy, new Size(50, 90));
@@ -46,7 +48,7 @@ namespace AvengersTheFallen
 			else if (level == "ScarletWitch")
 			{
 				enemyImage = new Bitmap(Resources.IronManEnemy, new Size(46, 74));
-				backgroundImage = new Bitmap(Resources.IronManBackground, new Size(1000, 500));
+				backgroundImage = new Bitmap(Resources.ScarletWitchBackground, new Size(1000, 500));
 			}
 			else if (level == "CaptainAmerica")
 			{
@@ -55,8 +57,8 @@ namespace AvengersTheFallen
 			}
 			else if (level == "DrStrange")
 			{
-				enemyImage = new Bitmap(Resources.IronManEnemy, new Size(46, 74));
-				backgroundImage = new Bitmap(Resources.IronManBackground, new Size(1000, 500));
+				enemyImage = new Bitmap(Resources.drstrangeEnemy, new Size(46, 74));
+				backgroundImage = new Bitmap(Resources.DrStrangeBackground, new Size(1000, 500));
 			}
 		}
 
@@ -135,7 +137,7 @@ namespace AvengersTheFallen
         public void AddObstacles()
         {
             //dodava random prepreki na mapata
-            int n = Form1.r.Next(1, 6);
+            int n = Form1.r.Next(4, 8);
             List<Obstacle> new_obstacles = new List<Obstacle>();
             for (int i = 0; i < n; i++)
             {
@@ -164,10 +166,22 @@ namespace AvengersTheFallen
             }
         }
 
+		public void Generate()
+		{
+			int digit = r.Next(0, 2);
+			if (digit == 0)
+			{
+				AddObstacles();
+			}
+			if (digit == 1)
+			{
+				AddEnemies();
+			}
+		}
         public void AddEnemies()
         {
             //dodava random neprijateli na mapata
-            int n = Form1.r.Next(1, 4);
+            int n = Form1.r.Next(4, 8);
             List<Enemy> new_enemies = new List<Enemy>();
             for (int i = 0; i < n; i++)
             {

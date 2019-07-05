@@ -79,23 +79,27 @@ namespace AvengersTheFallen
 				int k = Form1.r.Next(1, 3);
 				if (k == 1)
 				{
-					image = new Bitmap(Resources.ThorObstacle1, new Size(113, 45));
+					image = new Bitmap(Resources.car, new Size(50,100));
 				}
 				else
 				{
-					image = new Bitmap(Resources.ThorObstacle2, new Size(40, 123));
+					image = new Bitmap(Resources.bus, new Size(50,150));
 				}
 			}
 			if (level == "DrStrange")
 			{
-				int k = Form1.r.Next(1, 3);
+				int k = Form1.r.Next(1, 4);
 				if (k == 1)
 				{
-					image = new Bitmap(Resources.ThorObstacle1, new Size(113, 45));
+					image = new Bitmap(Resources.drstrangeObstacle1, new Size(100, 50));
+				}
+				else if (k == 2)
+				{
+					image = new Bitmap(Resources.drstrangeObstacle2, new Size(100, 50));
 				}
 				else
 				{
-					image = new Bitmap(Resources.ThorObstacle2, new Size(40, 123));
+					image = new Bitmap(Resources.drstrangeObstacle3, new Size(70, 50));
 				}
 			}
 

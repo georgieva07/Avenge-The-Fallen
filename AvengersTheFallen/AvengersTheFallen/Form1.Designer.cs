@@ -32,13 +32,11 @@
 			this.timerGenerateObstacles = new System.Windows.Forms.Timer(this.components);
 			this.timerMapMove = new System.Windows.Forms.Timer(this.components);
 			this.timerEnemyShoot = new System.Windows.Forms.Timer(this.components);
-			this.timerGenerateEnemies = new System.Windows.Forms.Timer(this.components);
 			this.panel1 = new AvengersTheFallen.DrawPanel();
 			this.SuspendLayout();
 			// 
 			// timerGenerateObstacles
 			// 
-			this.timerGenerateObstacles.Interval = 400;
 			this.timerGenerateObstacles.Tick += new System.EventHandler(this.TimerGenerateObstacles_Tick);
 			// 
 			// timerMapMove
@@ -50,10 +48,6 @@
 			// 
 			this.timerEnemyShoot.Interval = 1500;
 			this.timerEnemyShoot.Tick += new System.EventHandler(this.TimerEnemyShoot_Tick);
-			// 
-			// timerGenerateEnemies
-			// 
-			this.timerGenerateEnemies.Tick += new System.EventHandler(this.TimerGenerateEnemies_Tick);
 			// 
 			// panel1
 			// 
@@ -87,6 +81,5 @@
         private System.Windows.Forms.Timer timerMapMove;
         private DrawPanel panel1;
         private System.Windows.Forms.Timer timerEnemyShoot;
-        private System.Windows.Forms.Timer timerGenerateEnemies;
     }
 }

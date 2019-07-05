@@ -29,7 +29,7 @@ namespace AvengersTheFallen
             shots = new List<Weapon>();
             if (Name == "IronMan")
             {
-                Character = Resources.ironman;
+				Character = Resources.ironman;
 			}
             else if (Name == "Thor")
             {
@@ -38,21 +38,20 @@ namespace AvengersTheFallen
             else if (Name == "Hulk")
             {
 				Character = Resources.hulk;
-				
 			}
             else if (Name == "ScarletWitch")
             {
-                Character = Resources.scarletwitch;
-            }
+				Character = Resources.scarletwitch;
+			}
             else if (Name == "CaptainAmerica")
             {
                 Character = Resources.captainamerica;
-            }
+			}
             else if (Name == "DrStrange")
             {
                 Character = Resources.drstrange;
-            }
-			Character = new Bitmap(Character, new Size(50, 100));
+			}
+			Character = new Bitmap(Character, new Size(60, 120));
 		}
 
         public void Draw(Graphics g)

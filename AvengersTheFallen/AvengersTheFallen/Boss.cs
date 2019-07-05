@@ -18,6 +18,7 @@ namespace AvengersTheFallen
 		public int Damage { get; set; }
 		public bool Final = false;
 		private int Step = 5;
+		private Image Background;
 
 		public Boss(Point position)
 		{
@@ -28,12 +29,14 @@ namespace AvengersTheFallen
 			shots = new List<Weapon>();
 			Character = Resources.thanos;
 			Character = new Bitmap(Character, new Size(90, 150));
+			Background = Resources.thanosBackground;
+			Background = new Bitmap(Background, new Size(1000, 500));
 		}
 
 		public void Draw(Graphics g)
 		{
+			g.DrawImage(Background, new Point(0, 0));
 			g.DrawImage(Character, new Point(Location.X, Location.Y));
-			g.DrawRectangle(new Pen(Color.Red), Location.X, Location.Y, Character.Width, Character.Height);
 
 			foreach (Weapon w in shots)
 			{

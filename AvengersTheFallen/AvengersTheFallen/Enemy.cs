@@ -35,15 +35,15 @@ namespace AvengersTheFallen
             }
 			if (level == "DrStrange")
 			{
-				WeaponImage = new Bitmap(Resources.ThorEnemyWeapon, new Size(30, 50));
+				WeaponImage = new Bitmap(Resources.strange, new Size(30, 50));
 			}
 			if (level == "ScarletWitch")
 			{
-				WeaponImage = new Bitmap(Resources.ThorEnemyWeapon, new Size(30, 50));
+				WeaponImage = new Bitmap(Resources.IronManEnemyWeapon, new Size(30, 50));
 			}
 			if (level == "CaptainAmerica")
 			{
-				WeaponImage = new Bitmap(Resources.ThorEnemyWeapon, new Size(30, 50));
+				WeaponImage = new Bitmap(Resources.HulkEnemyWeapon, new Size(30, 50));
 			}
 		}
 

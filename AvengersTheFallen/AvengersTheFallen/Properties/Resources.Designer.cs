@@ -19,7 +19,7 @@ namespace AvengersTheFallen.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,16 +57,6 @@ namespace AvengersTheFallen.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap asdasd {
-            get {
-                object obj = ResourceManager.GetObject("asdasd", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -163,9 +153,9 @@ namespace AvengersTheFallen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fist {
+        internal static System.Drawing.Bitmap DrStrangeBackground {
             get {
-                object obj = ResourceManager.GetObject("fist", resourceCulture);
+                object obj = ResourceManager.GetObject("DrStrangeBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +163,49 @@ namespace AvengersTheFallen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap floating_cartoon_iceberg_set_isolated_from_vector_21651307 {
+        internal static System.Drawing.Bitmap drstrangeEnemy {
             get {
-                object obj = ResourceManager.GetObject("floating_cartoon_iceberg_set_isolated_from_vector_21651307", resourceCulture);
+                object obj = ResourceManager.GetObject("drstrangeEnemy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drstrangeObstacle1 {
+            get {
+                object obj = ResourceManager.GetObject("drstrangeObstacle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drstrangeObstacle2 {
+            get {
+                object obj = ResourceManager.GetObject("drstrangeObstacle2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drstrangeObstacle3 {
+            get {
+                object obj = ResourceManager.GetObject("drstrangeObstacle3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fist {
+            get {
+                object obj = ResourceManager.GetObject("fist", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,6 +363,16 @@ namespace AvengersTheFallen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ScarletWitchBackground {
+            get {
+                object obj = ResourceManager.GetObject("ScarletWitchBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shield {
             get {
                 object obj = ResourceManager.GetObject("shield", resourceCulture);
@@ -356,6 +396,26 @@ namespace AvengersTheFallen.Properties {
         internal static System.Drawing.Bitmap thanos {
             get {
                 object obj = ResourceManager.GetObject("thanos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thanosBackground {
+            get {
+                object obj = ResourceManager.GetObject("thanosBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thanosWeapon {
+            get {
+                object obj = ResourceManager.GetObject("thanosWeapon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

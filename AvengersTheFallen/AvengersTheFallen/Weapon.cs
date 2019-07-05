@@ -42,7 +42,7 @@ namespace AvengersTheFallen
 			else if (Owner == "CaptainAmerica")
 			{
 				WeaponImage = Resources.CaptainAmericaWeapon;
-				WeaponImage = new Bitmap(WeaponImage, new Size(40, 40));
+				WeaponImage = new Bitmap(WeaponImage, new Size(30, 30));
 			}
 			else if (Owner == "DrStrange")
 			{
@@ -51,12 +51,10 @@ namespace AvengersTheFallen
 			}
 			else if (Owner == "Thanos")
 			{
-				WeaponImage = Resources.strange;
-				WeaponImage = new Bitmap(WeaponImage, new Size(20, 30));
+				WeaponImage = Resources.thanosWeapon;
+				WeaponImage = new Bitmap(WeaponImage, new Size(30, 40));
 			}
-			
-		
-        }
+		}
 
         public Weapon(string owner, Point location, Obstacle o)
         {

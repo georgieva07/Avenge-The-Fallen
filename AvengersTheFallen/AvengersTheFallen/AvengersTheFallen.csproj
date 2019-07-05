@@ -62,20 +62,20 @@
     <Compile Include="Obstacle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Weapon.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -156,13 +156,7 @@
     <None Include="Resources\output-onlinepngtools.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\scarletwitch.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\thor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\drstrange.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ThorBackground.jpg" />
@@ -172,9 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hulk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IronManBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ironman.png" />
@@ -193,6 +184,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DrStrangeBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScarletWitchBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scarletwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drstrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drstrangeEnemy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drstrangeObstacle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drstrangeObstacle3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drstrangeObstacle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drstrangeEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScarletWitchBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thanosBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thanos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thanosWeapon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CaptainAmericaBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IronManBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

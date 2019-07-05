@@ -130,20 +130,11 @@
   <data name="motorcycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\motorcycle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thanos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thanos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="HulkEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HulkEnemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HulkEnemyWeapon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HulkEnemyWeapon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="asdasd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\asdasd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="floating_cartoon_iceberg_set_isolated_from_vector_21651307" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\floating-cartoon-iceberg-set-isolated-from-vector-21651307.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IronManEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IronManEnemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,9 +162,6 @@
   </data>
   <data name="captainamerica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\captainamerica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="drstrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\drstrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -225,5 +213,35 @@
   </data>
   <data name="CaptainAmericaWeapon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CaptainAmericaWeapon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drstrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drstrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DrStrangeBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrStrangeBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drstrangeEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drstrangeEnemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drstrangeObstacle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drstrangeObstacle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drstrangeObstacle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drstrangeObstacle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drstrangeObstacle3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drstrangeObstacle3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScarletWitchBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScarletWitchBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thanos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thanos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thanosBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thanosBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thanosWeapon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thanosWeapon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

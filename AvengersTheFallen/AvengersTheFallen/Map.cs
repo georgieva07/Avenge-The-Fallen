@@ -20,8 +20,8 @@ namespace AvengersTheFallen
         public Image enemyImage;
         public int Progress { get; set; }
 		private Random r;
-
-        public Map(int h, int w, String l, Random r)
+		
+		public Map(int h, int w, String l, Random r)
         {
             height = h;
             width = w;
@@ -76,6 +76,7 @@ namespace AvengersTheFallen
                 {
                     enemies[i].Draw(g);
                 }
+
             }
         }
 

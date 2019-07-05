@@ -43,7 +43,7 @@ namespace AvengersTheFallen
             timerEnemyShoot.Interval = timerMapMove.Interval * 54;
             this.Height = 500;
             this.Width = 1000;
-            Form1_Resize(null, null);
+           Form1_Resize(null, null);
 			KeyPreview = true;
             backgroundImage = new Bitmap(Resources.menuBackground, new Size(1000, 500));
         }
@@ -91,28 +91,24 @@ namespace AvengersTheFallen
                 avenger.AddShot();
                 if (avenger.Name == "Hulk")
                     avenger.AddShotHulk(map.findNearObstacleHulk(avenger));
-
             }
-            panel1.Invalidate(true);
+			if (e.KeyData == Keys.Escape)
+			{
+				FormBorderStyle = FormBorderStyle.Sizable;
+				WindowState = FormWindowState.Normal;
+				TopMost = false;
+			}
+			panel1.Invalidate(true);
         }
 
-        private void TimerGenerateObstacles_Tick(object sender, EventArgs e)
-        {
-            if (map.Final == false)
-            {
+		private void TimerGenerateObstacles_Tick(object sender, EventArgs e)
+		{
+			if (map.Final == false)
+			{
 				map.Generate();
-                
-                panel1.Invalidate();
-            }
-        }
 
-        private void TimerGenerateEnemies_Tick(object sender, EventArgs e)
-        {
-			/*if (map.Final == false)
-            {
-                map.AddEnemies();
-                panel1.Invalidate();
-            }*/
+				panel1.Invalidate();
+			}
 		}
 
 		private void TimerMapMove_Tick(object sender, EventArgs e)
@@ -143,13 +139,14 @@ namespace AvengersTheFallen
 				{
 					map.Final = true;
 					boss.Final = true;
+					avenger.Final = true;
 				}
 			}
 			else
 			{
 				avenger.MoveShots();
 				boss.Move(avenger);
-				if(r.Next(20) == 1)
+				if(r.Next(25) == 1)
 				{
 					boss.AddShot();
 				}
@@ -164,7 +161,7 @@ namespace AvengersTheFallen
 					panelView = PanelView.game_over;
 				}
 
-				if (boss.Damage == 10)
+				if (boss.Damage == 15)
 				{
 					panelView = PanelView.level_select;
                     if(avenger.Name == "Hulk")
@@ -272,7 +269,7 @@ namespace AvengersTheFallen
                 strange.Width = panel1.Width / 10;
                 strange.Height = panel1.Height / 10;
                 strange.Font = new Font(strange.Font.FontFamily, strange.Height / 3);
-                strange.Text = "Strange";
+                strange.Text = "Doctor Strange";
                 strange.Location = new Point(((panel1.Width - (hulk.Width * 6 + panel1.Width / 100)) / 2 + 2 * (panel1.Width / 10 + panel1.Width / 100)), panel1.Height / 2 - strange.Height);
                 strange.Click += new System.EventHandler(this.panel1StrangeButton);
                 panel1.Controls.Add(strange);
@@ -285,7 +282,7 @@ namespace AvengersTheFallen
                 scarlet_witch.Width = panel1.Width / 10;
                 scarlet_witch.Height = panel1.Height / 10;
                 scarlet_witch.Font = new Font(scarlet_witch.Font.FontFamily, scarlet_witch.Height / 3);
-                scarlet_witch.Text = "Scarlet";
+                scarlet_witch.Text = "Scarlet Witch";
                 scarlet_witch.Location = new Point(((panel1.Width - (hulk.Width * 6 + panel1.Width / 100)) / 2 + 3 * (panel1.Width / 10 + panel1.Width / 100)), panel1.Height / 2 - scarlet_witch.Height);
                 scarlet_witch.Click += new System.EventHandler(this.panel1ScarletButton);
                 panel1.Controls.Add(scarlet_witch);
@@ -311,7 +308,7 @@ namespace AvengersTheFallen
                 iron_man.Width = panel1.Width / 10;
                 iron_man.Height = panel1.Height / 10;
                 iron_man.Font = new Font(iron_man.Font.FontFamily, iron_man.Height / 4.5F);
-                iron_man.Text = "Iron man";
+                iron_man.Text = "Iron Man";
                 iron_man.Location = new Point(((panel1.Width - (hulk.Width * 6 + panel1.Width / 100)) / 2 + 5 * (panel1.Width / 10 + panel1.Width / 100)), panel1.Height / 2 - captain_america.Height);
                 iron_man.Click += new System.EventHandler(this.panel1IronManButton);
                 panel1.Controls.Add(iron_man);
@@ -478,5 +475,19 @@ namespace AvengersTheFallen
 			boss = new Boss(new Point(1000 / 2, 0));
 			map = new Map(500, 1000, avenger.Name, r);
 		}
-    }
+
+		private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			FormBorderStyle = FormBorderStyle.None;
+			WindowState = FormWindowState.Maximized;
+			TopMost = true;
+		}
+
+		private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			FormBorderStyle = FormBorderStyle.None;
+			WindowState = FormWindowState.Maximized;
+			TopMost = true;
+		}
+	}
 }

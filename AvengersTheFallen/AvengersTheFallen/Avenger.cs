@@ -17,8 +17,10 @@ namespace AvengersTheFallen
         public List<Weapon> shots { get; set; }
         public int Damage { get; set; }
         public int BossDamage { get; private set; }
+		private Image heart;
+		public bool Final = false;
 
-        public Avenger(string name, Point position)
+		public Avenger(string name, Point position)
         {
             Name = name;
             width = 1000;
@@ -27,7 +29,9 @@ namespace AvengersTheFallen
 			Damage = 0;
             BossDamage = 0;
             shots = new List<Weapon>();
-            if (Name == "IronMan")
+			heart = Resources.heart;
+			heart = new Bitmap(heart, new Size(30, 30));
+			if (Name == "IronMan")
             {
 				Character = Resources.ironman;
 			}
@@ -60,7 +64,24 @@ namespace AvengersTheFallen
             foreach (Weapon w in shots)
             {
                 w.Draw(g);
-            }
+			}
+			int step = 5;
+			if (Final == false)
+			{
+				for (int i = 0; i < 5 - Damage; i++)
+				{
+					g.DrawImage(heart, new Point(step, 0));
+					step += 5 + heart.Width;
+				}
+			}
+			else
+			{
+				for (int i = 0; i < 5 - BossDamage; i++)
+				{
+					g.DrawImage(heart, new Point(step, 0));
+					step += 5 + heart.Width;
+				}
+			}
         }
 
         public void Move(string direction)

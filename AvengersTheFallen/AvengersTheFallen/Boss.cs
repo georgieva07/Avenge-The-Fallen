@@ -19,6 +19,7 @@ namespace AvengersTheFallen
 		public bool Final = false;
 		private int Step = 5;
 		private Image Background;
+		
 
 		public Boss(Point position)
 		{

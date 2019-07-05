@@ -58,19 +58,23 @@ namespace AvengersTheFallen
                     image = new Bitmap(Resources.ThorObstacle2, new Size(40, 123));
                 }
             }
-			if (level == "CaptainAmerica")
-			{
-				int k = Form1.r.Next(1, 3);
-				if (k == 1)
-				{
-					image = new Bitmap(Resources.ThorObstacle1, new Size(113, 45));
-				}
-				else
-				{
-					image = new Bitmap(Resources.ThorObstacle2, new Size(40, 123));
-				}
-			}
-			if (level == "ScarletWitch")
+            if (level == "CaptainAmerica")
+            {
+                int k = Form1.r.Next(1, 4);
+                if (k == 1)
+                {
+                    image = new Bitmap(Resources.CaptainAmericaObstacle1, new Size(97, 110));
+                }
+                else if (k == 2)
+                {
+                    image = new Bitmap(Resources.CaptainAmericaObstacle2, new Size(122, 60));
+                }
+                else
+                {
+                    image = new Bitmap(Resources.CaptainAmericaObstacle3, new Size(118, 105));
+                }
+            }
+            if (level == "ScarletWitch")
 			{
 				int k = Form1.r.Next(1, 3);
 				if (k == 1)

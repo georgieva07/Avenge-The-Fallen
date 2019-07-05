@@ -41,8 +41,8 @@ namespace AvengersTheFallen
 			}
 			else if (Owner == "CaptainAmerica")
 			{
-				WeaponImage = Resources.shield;
-				WeaponImage = new Bitmap(WeaponImage, new Size(20, 30));
+				WeaponImage = Resources.CaptainAmericaWeapon;
+				WeaponImage = new Bitmap(WeaponImage, new Size(40, 40));
 			}
 			else if (Owner == "DrStrange")
 			{

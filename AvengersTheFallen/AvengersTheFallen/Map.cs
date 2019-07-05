@@ -50,8 +50,8 @@ namespace AvengersTheFallen
 			}
 			else if (level == "CaptainAmerica")
 			{
-				enemyImage = new Bitmap(Resources.IronManEnemy, new Size(46, 74));
-				backgroundImage = new Bitmap(Resources.IronManBackground, new Size(1000, 500));
+				enemyImage = new Bitmap(Resources.HulkEnemy, new Size(46, 74));
+				backgroundImage = new Bitmap(Resources.CaptainAmericaBackground, new Size(1000, 500));
 			}
 			else if (level == "DrStrange")
 			{
